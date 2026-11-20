@@ -62,7 +62,7 @@ struct RootView: View {
     /// only last until the app next came back to the foreground.
     @State private var hasEvaluatedExpiryWarning = false
 
-    private let statusTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let statusTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 
     private var isReady: Bool {
         pairingExists && tunnel.isConnected && mounting.coolisMounted
@@ -70,32 +70,21 @@ struct RootView: View {
 
     var body: some View {
         NavigationStack {
-            // Until pairing + tunnel + DDI are all up, every control on the map is
-            // disabled anyway. Rather than leave a normal-looking but silently dead
-            // map, cover it with a blocking readiness overlay that says exactly what
-            // is missing. The overlay is the last child of the ZStack (drawn on top)
-            // and the map explicitly stops hit-testing beneath it, so nothing can be
-            // tapped through — no accidental pin drops. A safe-area inset banner was
-            // used here before and did not render on device, because the map below
-            // discards the safe area.
             ZStack {
                 GhostHomeView()
-                    .allowsHitTesting(isReady && !isShowingExpiryWarning)
-
-                // Strictly one card at a time — `else if`, not two independent
-                // `if`s, so the two can never stack on top of each other. The
-                // expiry warning wins: an unreadable map is recoverable in
-                // seconds, a lapsed signature means a reinstall. Dismissing it
-                // reveals the readiness overlay underneath, whose blocking
-                // behaviour is unchanged (the map stops hit-testing for either).
-                if isShowingExpiryWarning {
-                    expiryOverlay
-                } else if !isReady {
-                    readinessOverlay
+                    .allowsHitTesting(!isShowingExpiryWarning)
+                if isShowingExpiryWarning { expiryOverlay }
+            }
+            .safeAreaInset(edge:.top,spacing:0) {
+                if !isReady && !isShowingExpiryWarning {
+                    HStack {
+                        Label("Connect to simulate · map available",systemImage:"bolt.horizontal.circle")
+                            .font(.caption).foregroundStyle(.secondary)
+                        Spacer()
+                        Button("Setup") { isShowingSettings = true }.font(.caption.bold())
+                    }.padding(10).background(.regularMaterial)
                 }
             }
-            .animation(.easeInOut(duration: 0.2), value: isReady)
-            .animation(.easeInOut(duration: 0.2), value: isShowingExpiryWarning)
         }
         .sheet(isPresented: $isShowingSettings) {
             SettingsView()
@@ -206,8 +195,8 @@ struct RootView: View {
 
     private var expiryBody: String {
         signatureHasExpired
-            ? String(localized: "The signing certificate for this install has lapsed, so MobileGhost will not launch again until it is re-signed. Open SideStore and refresh MobileGhost to fix it.")
-            : String(localized: "Open SideStore and refresh MobileGhost to re-sign it. If the signature fully expires the app will not launch and must be reinstalled.")
+            ? String(localized: "This installation needs to be re-signed. If installed from Xcode, connect to your Mac and Run the same project again. If installed with SideStore, refresh it there. Do not delete the app.")
+            : String(localized: "Renew before expiry. For an Xcode installation, connect to your Mac and Run the same project using the same signing team. For a SideStore installation, refresh it in SideStore. Keep the existing app installed.")
     }
 
     /// Same visual language as the readiness overlay: full-screen material scrim
@@ -251,7 +240,7 @@ struct RootView: View {
                     openSideStore()
                     dismissExpiryWarning()
                 } label: {
-                    Label("Open SideStore", systemImage: "arrow.up.forward.app")
+                    Label("SideStore users: open SideStore", systemImage: "arrow.up.forward.app")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)

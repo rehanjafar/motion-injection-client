@@ -1,132 +1,131 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "%@": {
-      "shouldTranslate": false
-    },
-    "%@\n\nTarget: %@:49152\nExpected LocalDevVPN IP: %@\n\nTry this:\n%@\n\nTechnical details:\nCode %lld: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@\n\nTarget: %@:49152\nExpected LocalDevVPN IP: %@\n\nTry this:\n%@\n\nTechnical details:\nCode %lld: %@"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@\n\nTarget: %@:49152\nExpected LocalDevVPN IP: %@\n\nTry this:\n%@\n\nTechnical details:\nCode %lld: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@\n\nTarget: %@:49152\nExpected LocalDevVPN IP: %@\n\nTry this:\n%@\n\nTechnical details:\nCode %lld: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@\n\nĐích: %@:49152\nĐịa chỉ LocalDevVPN mong đợi: %@\n\nHãy thử:\n%@\n\nChi tiết kỹ thuật:\nMã %lld: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@\n\nĐích: %@:49152\nĐịa chỉ LocalDevVPN mong đợi: %@\n\nHãy thử:\n%@\n\nChi tiết kỹ thuật:\nMã %lld: %@"
           }
         }
       }
     },
-    "%@ (%@)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ (%@)"
+    "%@ (%@)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (%@)"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ (%@)"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (%@)"
           }
         }
       }
     },
-    "%@ ready": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ ready"
+    "%@ ready" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ready"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ đã sẵn sàng"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ đã sẵn sàng"
           }
         }
       }
     },
-    "%@ timed out. Connect LocalDevVPN and make sure Wi-Fi is joined to a network, then try again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ timed out. Connect LocalDevVPN and make sure Wi-Fi is joined to a network, then try again."
+    "%@ timed out. Connect LocalDevVPN and make sure Wi-Fi is joined to a network, then try again." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ timed out. Connect LocalDevVPN and make sure Wi-Fi is joined to a network, then try again."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ đã quá thời gian chờ. Hãy bật LocalDevVPN và đảm bảo Wi-Fi đã vào mạng, rồi thử lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ đã quá thời gian chờ. Hãy bật LocalDevVPN và đảm bảo Wi-Fi đã vào mạng, rồi thử lại."
           }
         }
       }
     },
-    "%@: done": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@: done"
+    "%@: done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: done"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@: xong"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: xong"
           }
         }
       }
     },
-    "%@: pending": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@: pending"
+    "%@: pending" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: pending"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@: đang chờ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: đang chờ"
           }
         }
       }
     },
-    "%lld days": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1 day"
+    "%lld days" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1 day"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld days"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld days"
                 }
               }
             }
           }
         },
-        "vi": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld ngày"
+        "vi" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld ngày"
                 }
               }
             }
@@ -134,33 +133,33 @@
         }
       }
     },
-    "%lld hours": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1 hour"
+    "%lld hours" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1 hour"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld hours"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld hours"
                 }
               }
             }
           }
         },
-        "vi": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld giờ"
+        "vi" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld giờ"
                 }
               }
             }
@@ -168,33 +167,36 @@
         }
       }
     },
-    "%lld minutes": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1 minute"
+    "%lld km/h" : {
+
+    },
+    "%lld minutes" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1 minute"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld minutes"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld minutes"
                 }
               }
             }
           }
         },
-        "vi": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld phút"
+        "vi" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld phút"
                 }
               }
             }
@@ -202,33 +204,34 @@
         }
       }
     },
-    "%lld saved locations": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1 saved location"
+    "%lld saved locations" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1 saved location"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld saved locations"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld saved locations"
                 }
               }
             }
           }
         },
-        "vi": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld vị trí đã lưu"
+        "vi" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld vị trí đã lưu"
                 }
               }
             }
@@ -236,1137 +239,1303 @@
         }
       }
     },
-    "A port needed for the connection to this device is already in use.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A port needed for the connection to this device is already in use."
+    "© OpenStreetMap contributors" : {
+
+    },
+    "© OpenStreetMap contributors · Fix the map" : {
+
+    },
+    "0" : {
+
+    },
+    "A port needed for the connection to this device is already in use." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A port needed for the connection to this device is already in use."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Một cổng cần cho kết nối tới thiết bị đang bị chiếm dụng."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Một cổng cần cho kết nối tới thiết bị đang bị chiếm dụng."
           }
         }
       }
+    },
+    "A successful command is not proof of what another app displays. Check Maps after setting and restoring a location." : {
+
+    },
+    "About" : {
+
     },
-    "Adds a few metres of random movement so the simulated position looks like a real GPS fix.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adds a few metres of random movement so the simulated position looks like a real GPS fix."
+    "Active routes and fixed positions continue refreshing when you switch apps or lock the screen, while iOS permits background location execution. Allow location access and keep LocalDevVPN connected. A location indicator may appear and battery use increases." : {
+
+    },
+    "Add 2–12 pins from the map. Bus mode follows roads between your selected stops, not an official transit service." : {
+
+    },
+    "Add stop" : {
+
+    },
+    "Add to schedules" : {
+
+    },
+    "Adds a few metres of random movement so the simulated position looks like a real GPS fix." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adds a few metres of random movement so the simulated position looks like a real GPS fix."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thêm chuyển động ngẫu nhiên vài mét để vị trí giả lập trông giống một tín hiệu GPS thật."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm chuyển động ngẫu nhiên vài mét để vị trí giả lập trông giống một tín hiệu GPS thật."
           }
         }
       }
     },
-    "Advanced": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Advanced"
+    "Advanced" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advanced"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nâng cao"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nâng cao"
           }
         }
       }
+    },
+    "Allow background location" : {
+
     },
-    "An Error has Occurred": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "An Error has Occurred"
+    "Allow notifications to receive an alert when route movement starts. Notification preferences are in Settings." : {
+
+    },
+    "An Error has Occurred" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An Error has Occurred"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã xảy ra lỗi"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã xảy ra lỗi"
           }
         }
       }
     },
-    "An external link wants to clear the simulated location.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "An external link wants to clear the simulated location."
+    "An external link wants to clear the simulated location." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An external link wants to clear the simulated location."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Một liên kết bên ngoài muốn xoá vị trí giả lập."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Một liên kết bên ngoài muốn xoá vị trí giả lập."
           }
         }
       }
     },
-    "An external link wants to set the simulated location to %@.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "An external link wants to set the simulated location to %@."
+    "An external link wants to set the simulated location to %@." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An external link wants to set the simulated location to %@."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Một liên kết bên ngoài muốn đặt vị trí giả lập thành %@."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Một liên kết bên ngoài muốn đặt vị trí giả lập thành %@."
           }
         }
       }
+    },
+    "Apple" : {
+
+    },
+    "Apple Maps" : {
+
+    },
+    "Arm" : {
+
+    },
+    "Arm while the app is open, then you can lock your phone. Keep LocalDevVPN connected. iOS may interrupt execution; missed departures are marked for review, never silently replayed. Re-arm after restarting the app." : {
+
     },
-    "Background Keep-Alive": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Background Keep-Alive"
+    "Background Keep-Alive" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background Keep-Alive"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Duy trì chạy nền"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duy trì chạy nền"
           }
         }
       }
     },
-    "Background Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Background Location"
+    "Background keep-alive needs “Always” location access and will not work without it. Set location access to Always so the simulation keeps running when MobileGhost is in the background." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background keep-alive needs “Always” location access and will not work without it. Set location access to Always so the simulation keeps running when MobileGhost is in the background."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vị trí nền"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duy trì chạy nền cần quyền truy cập vị trí “Luôn luôn” và sẽ không hoạt động nếu thiếu quyền này. Hãy đặt quyền truy cập vị trí thành Luôn luôn để phiên giả lập vị trí tiếp tục chạy khi MobileGhost ở chế độ nền."
           }
         }
       }
     },
-    "Background keep-alive needs “Always” location access and will not work without it. Set location access to Always so the simulation keeps running when MobileGhost is in the background.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Background keep-alive needs “Always” location access and will not work without it. Set location access to Always so the simulation keeps running when MobileGhost is in the background."
+    "Background Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Duy trì chạy nền cần quyền truy cập vị trí “Luôn luôn” và sẽ không hoạt động nếu thiếu quyền này. Hãy đặt quyền truy cập vị trí thành Luôn luôn để phiên giả lập vị trí tiếp tục chạy khi MobileGhost ở chế độ nền."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vị trí nền"
           }
         }
       }
     },
-    "Bookmark Sync File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bookmark Sync File"
+    "Background location active" : {
+
+    },
+    "Background location not active" : {
+
+    },
+    "Based on TLocation and StikDebug by Stephen Bove and contributors; device library by Jackson Coxson. Independent Mobile Ghost modifications dated October 22, 2026. AGPL-3.0, no warranty." : {
+
+    },
+    "Bookmark Sync File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bookmark Sync File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp đồng bộ vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp đồng bộ vị trí đã lưu"
           }
         }
       }
     },
-    "Bookmarks": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bookmarks"
+    "Bookmarks" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bookmarks"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vị trí đã lưu"
           }
         }
       }
     },
-    "Bookmarks are written to this file whenever they change. Link the same file on another device to share them.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bookmarks are written to this file whenever they change. Link the same file on another device to share them."
+    "Bookmarks are written to this file whenever they change. Link the same file on another device to share them." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bookmarks are written to this file whenever they change. Link the same file on another device to share them."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mỗi khi có thay đổi, các vị trí đã lưu sẽ được ghi vào tệp này. Liên kết cùng tệp đó trên thiết bị khác để dùng chung."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mỗi khi có thay đổi, các vị trí đã lưu sẽ được ghi vào tệp này. Liên kết cùng tệp đó trên thiết bị khác để dùng chung."
           }
         }
       }
+    },
+    "Build a route, choose a departure time, then add it here. You can save several departures." : {
+
+    },
+    "Bus (custom roads)" : {
+
     },
-    "Cancel": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
+    "Cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Huỷ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huỷ"
           }
         }
       }
     },
-    "Cancel Search": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel Search"
+    "Cancel Search" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel Search"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Huỷ tìm kiếm"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huỷ tìm kiếm"
           }
         }
       }
     },
-    "Checking the Developer Disk Image": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Checking the Developer Disk Image"
+    "Car" : {
+
+    },
+    "Checking the Developer Disk Image" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking the Developer Disk Image"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Việc kiểm tra Developer Disk Image (DDI)"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Việc kiểm tra Developer Disk Image (DDI)"
           }
         }
       }
     },
-    "Clear Failed": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Failed"
+    "Clear Failed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Failed"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xoá không thành công"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá không thành công"
           }
         }
       }
     },
-    "Clear Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Location"
+    "Clear Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xoá vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá vị trí"
           }
         }
       }
     },
-    "Clear Location?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Location?"
+    "Clear Location?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Location?"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xoá vị trí?"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá vị trí?"
           }
         }
       }
     },
-    "Clear Search": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clear Search"
+    "Clear Search" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Search"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xoá nội dung tìm kiếm"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá nội dung tìm kiếm"
           }
         }
       }
     },
-    "Clearing the simulated location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clearing the simulated location"
+    "Clearing the simulated location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clearing the simulated location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Việc xoá vị trí giả lập"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Việc xoá vị trí giả lập"
           }
         }
       }
     },
-    "Clears the simulated GPS position so this device reports its real location again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clears the simulated GPS position so this device reports its real location again."
+    "Clears the simulated GPS position so this device reports its real location again." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clears the simulated GPS position so this device reports its real location again."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xoá vị trí GPS giả lập để thiết bị báo lại vị trí thật."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá vị trí GPS giả lập để thiết bị báo lại vị trí thật."
           }
         }
       }
     },
-    "Close and reopen MobileGhost to switch language.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close and reopen MobileGhost to switch language."
+    "Close and reopen MobileGhost to switch language." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close and reopen MobileGhost to switch language."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy đóng và mở lại MobileGhost để đổi ngôn ngữ."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy đóng và mở lại MobileGhost để đổi ngôn ngữ."
           }
         }
       }
     },
-    "Close other JIT, debugging, proxy, or VPN apps that may be using the connection.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close other JIT, debugging, proxy, or VPN apps that may be using the connection."
+    "Close other JIT, debugging, proxy, or VPN apps that may be using the connection." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close other JIT, debugging, proxy, or VPN apps that may be using the connection."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đóng các ứng dụng JIT, gỡ lỗi, proxy hoặc VPN khác có thể đang dùng kết nối này."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đóng các ứng dụng JIT, gỡ lỗi, proxy hoặc VPN khác có thể đang dùng kết nối này."
           }
         }
       }
     },
-    "Confirm LocalDevVPN is exposing the device at %@.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirm LocalDevVPN is exposing the device at %@."
+    "Confirm iOS shows the VPN indicator." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm iOS shows the VPN indicator."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kiểm tra LocalDevVPN đang cung cấp thiết bị tại %@."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra iOS có hiện biểu tượng VPN."
           }
         }
       }
     },
-    "Confirm Wi-Fi and LocalDevVPN are both connected.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirm Wi-Fi and LocalDevVPN are both connected."
+    "Confirm LocalDevVPN is exposing the device at %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm LocalDevVPN is exposing the device at %@."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kiểm tra Wi-Fi và LocalDevVPN đều đã kết nối."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra LocalDevVPN đang cung cấp thiết bị tại %@."
           }
         }
       }
     },
-    "Confirm Wi-Fi and LocalDevVPN are connected.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirm Wi-Fi and LocalDevVPN are connected."
+    "Confirm Wi-Fi and LocalDevVPN are both connected." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Wi-Fi and LocalDevVPN are both connected."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kiểm tra Wi-Fi và LocalDevVPN đã kết nối."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra Wi-Fi và LocalDevVPN đều đã kết nối."
           }
         }
       }
     },
-    "Confirm iOS shows the VPN indicator.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirm iOS shows the VPN indicator."
+    "Confirm Wi-Fi and LocalDevVPN are connected." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Wi-Fi and LocalDevVPN are connected."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kiểm tra iOS có hiện biểu tượng VPN."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra Wi-Fi và LocalDevVPN đã kết nối."
           }
         }
       }
+    },
+    "Connect to simulate · map available" : {
+
     },
-    "Connected to this device": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Connected to this device"
+    "Connected to this device" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connected to this device"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã kết nối tới thiết bị"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã kết nối tới thiết bị"
           }
         }
       }
     },
-    "Connecting to the device": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Connecting to the device"
+    "Connecting to the device" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecting to the device"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Việc kết nối tới thiết bị"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Việc kết nối tới thiết bị"
           }
         }
       }
     },
-    "Connection Error": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Connection Error"
+    "Connection" : {
+
+    },
+    "Connection Error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connection Error"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lỗi kết nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lỗi kết nối"
           }
         }
       }
     },
-    "Coordinates copied": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Coordinates copied"
+    "Connection settings" : {
+
+    },
+    "Coordinates copied" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coordinates copied"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã sao chép toạ độ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã sao chép toạ độ"
           }
         }
       }
     },
-    "Copy Coordinates": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy Coordinates"
+    "Copy Coordinates" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Coordinates"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sao chép toạ độ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sao chép toạ độ"
           }
         }
       }
     },
-    "Could Not Determine Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could Not Determine Location"
+    "Could not clear simulated location (error %d)." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not clear simulated location (error %d)."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không xác định được vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể xoá vị trí giả lập (lỗi %d)."
           }
         }
       }
     },
-    "Could not clear simulated location (error %d).": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not clear simulated location (error %d)."
+    "Could not create a sync file: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not create a sync file: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không thể xoá vị trí giả lập (lỗi %d)."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể tạo tệp đồng bộ: %@"
           }
         }
       }
     },
-    "Could not create a sync file: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not create a sync file: %@"
+    "Could Not Determine Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could Not Determine Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không thể tạo tệp đồng bộ: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không xác định được vị trí"
           }
         }
       }
     },
-    "Could not download the Developer Disk Image (DDI): %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not download the Developer Disk Image (DDI): %@"
+    "Could not download the Developer Disk Image (DDI): %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not download the Developer Disk Image (DDI): %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không tải được Developer Disk Image (DDI): %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không tải được Developer Disk Image (DDI): %@"
           }
         }
       }
     },
-    "Could not link that file: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not link that file: %@"
+    "Could not link that file: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not link that file: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không thể liên kết tệp đó: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể liên kết tệp đó: %@"
           }
         }
       }
     },
-    "Could not simulate location (error %d). Make sure the device is connected and the Developer Disk Image (DDI) is mounted.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not simulate location (error %d). Make sure the device is connected and the Developer Disk Image (DDI) is mounted."
+    "Could not simulate location (error %d). Make sure the device is connected and the Developer Disk Image (DDI) is mounted." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not simulate location (error %d). Make sure the device is connected and the Developer Disk Image (DDI) is mounted."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không thể giả lập vị trí (lỗi %d). Hãy đảm bảo thiết bị đã kết nối và Developer Disk Image (DDI) đã được gắn."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể giả lập vị trí (lỗi %d). Hãy đảm bảo thiết bị đã kết nối và Developer Disk Image (DDI) đã được gắn."
           }
         }
       }
     },
-    "Create Sync File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Create Sync File"
+    "Create Sync File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Sync File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tạo tệp đồng bộ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tạo tệp đồng bộ"
           }
         }
       }
     },
-    "DDI Mount Failed": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DDI Mount Failed"
+    "DDI download complete." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DDI download complete."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gắn DDI không thành công"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã tải xong DDI."
           }
         }
       }
     },
-    "DDI download complete.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DDI download complete."
+    "DDI files refreshed successfully." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DDI files refreshed successfully."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã tải xong DDI."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã tải lại các tệp DDI thành công."
           }
         }
       }
     },
-    "DDI files refreshed successfully.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DDI files refreshed successfully."
+    "DDI Mount Failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DDI Mount Failed"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã tải lại các tệp DDI thành công."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gắn DDI không thành công"
           }
         }
       }
     },
-    "Delete": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
+    "Delete" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xoá"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá"
           }
         }
       }
+    },
+    "Depart (km/h, 0 = inherit)" : {
+
     },
-    "Developer Disk Image mounted": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Developer Disk Image mounted"
+    "Departure" : {
+
+    },
+    "Departures armed" : {
+
+    },
+    "Departures paused" : {
+
+    },
+    "Developer Disk Image mounted" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Disk Image mounted"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã gắn Developer Disk Image (DDI)"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã gắn Developer Disk Image (DDI)"
           }
         }
       }
+    },
+    "Developer image" : {
+
+    },
+    "Device address" : {
+
     },
-    "Device Not Connected": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Device Not Connected"
+    "Device Not Connected" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Device Not Connected"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa kết nối thiết bị"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa kết nối thiết bị"
           }
         }
       }
     },
-    "Disconnect and reconnect LocalDevVPN.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Disconnect and reconnect LocalDevVPN."
+    "Disarm" : {
+
+    },
+    "Disconnect and reconnect LocalDevVPN." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnect and reconnect LocalDevVPN."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ngắt rồi kết nối lại LocalDevVPN."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ngắt rồi kết nối lại LocalDevVPN."
           }
         }
       }
     },
-    "Don't show again for this expiry": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Don't show again for this expiry"
+    "Don't show again for this expiry" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't show again for this expiry"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không nhắc lại cho lần hết hạn này"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không nhắc lại cho lần hết hạn này"
           }
         }
       }
+    },
+    "Done" : {
+
     },
-    "Download LocalDevVPN": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Download LocalDevVPN"
+    "Download LocalDevVPN" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download LocalDevVPN"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tải LocalDevVPN"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tải LocalDevVPN"
           }
         }
       }
     },
-    "Downloading %@…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Downloading %@…"
+    "Downloading %@…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading %@…"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang tải %@…"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang tải %@…"
           }
         }
       }
     },
-    "Drop a pin on the map and tap the bookmark icon to save a location.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Drop a pin on the map and tap the bookmark icon to save a location."
+    "Drop a pin on the map and tap the bookmark icon to save a location." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drop a pin on the map and tap the bookmark icon to save a location."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chạm vào bản đồ để thả ghim, rồi chạm biểu tượng dấu trang để lưu vị trí."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm vào bản đồ để thả ghim, rồi chạm biểu tượng dấu trang để lưu vị trí."
           }
         }
       }
+    },
+    "During a journey" : {
+
+    },
+    "Enable Developer Mode, import this iPhone’s pairing file, and connect LocalDevVPN while joined to Wi-Fi." : {
+
+    },
+    "Enable route notifications" : {
+
     },
-    "Enter a name for this location.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter a name for this location."
+    "Enter a name for this location." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a name for this location."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập tên cho vị trí này."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập tên cho vị trí này."
           }
         }
       }
     },
-    "Enter a new name for this location.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter a new name for this location."
+    "Enter a new name for this location." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a new name for this location."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập tên mới cho vị trí này."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập tên mới cho vị trí này."
           }
         }
       }
     },
-    "Existing DDI files will be removed before downloading fresh copies.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Existing DDI files will be removed before downloading fresh copies."
+    "Every %@" : {
+
+    },
+    "Existing DDI files will be removed before downloading fresh copies." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existing DDI files will be removed before downloading fresh copies."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Các tệp DDI hiện có sẽ bị xoá trước khi tải bản mới."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Các tệp DDI hiện có sẽ bị xoá trước khi tải bản mới."
           }
         }
       }
     },
-    "Expired": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Expired"
+    "Expired" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expired"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã hết hạn"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã hết hạn"
           }
         }
       }
     },
-    "Exported bookmarks are saved as a JSON file you can keep in Files or iCloud Drive and import again after reinstalling.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exported bookmarks are saved as a JSON file you can keep in Files or iCloud Drive and import again after reinstalling."
+    "Exported bookmarks are saved as a JSON file you can keep in Files or iCloud Drive and import again after reinstalling." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exported bookmarks are saved as a JSON file you can keep in Files or iCloud Drive and import again after reinstalling."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Các vị trí đã lưu được xuất ra tệp JSON, bạn có thể giữ trong Tệp hoặc iCloud Drive rồi nhập lại sau khi cài lại ứng dụng."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Các vị trí đã lưu được xuất ra tệp JSON, bạn có thể giữ trong Tệp hoặc iCloud Drive rồi nhập lại sau khi cài lại ứng dụng."
           }
         }
       }
     },
-    "External Location Request": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "External Location Request"
+    "External Location Request" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External Location Request"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yêu cầu vị trí từ bên ngoài"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yêu cầu vị trí từ bên ngoài"
           }
         }
       }
     },
-    "Failed to redownload DDI files: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Failed to redownload DDI files: %@"
+    "Failed to redownload DDI files: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to redownload DDI files: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không tải lại được các tệp DDI: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không tải lại được các tệp DDI: %@"
           }
         }
       }
+    },
+    "Force-quitting, iOS suspension, or losing the VPN can interrupt updates. After an execution gap, movement pauses instead of jumping ahead. A fixed position may persist or revert; verify it on your phone. Arm saved departures while in the foreground. They can then run while locked when iOS permits execution; re-arm after restarting the app." : {
+
     },
-    "Help": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Help"
+    "Get LocalDevVPN" : {
+
+    },
+    "Ghost" : {
+
+    },
+    "Help" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trợ giúp"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trợ giúp"
           }
         }
       }
     },
-    "If it keeps happening, reboot the device to clear the stuck port.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "If it keeps happening, reboot the device to clear the stuck port."
+    "If it keeps happening, reboot the device to clear the stuck port." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If it keeps happening, reboot the device to clear the stuck port."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nếu vẫn lỗi, hãy khởi động lại thiết bị để giải phóng cổng bị kẹt."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu vẫn lỗi, hãy khởi động lại thiết bị để giải phóng cổng bị kẹt."
           }
         }
       }
     },
-    "If this keeps happening, select a fresh pairing file.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "If this keeps happening, select a fresh pairing file."
+    "If this keeps happening, select a fresh pairing file." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If this keeps happening, select a fresh pairing file."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nếu vẫn lỗi, hãy chọn một tệp ghép nối mới."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu vẫn lỗi, hãy chọn một tệp ghép nối mới."
           }
         }
       }
     },
-    "Import Bookmarks": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import Bookmarks"
+    "Import a pairing file before clearing the simulated location from a URL." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import a pairing file before clearing the simulated location from a URL."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy nhập tệp ghép nối trước khi xoá vị trí giả lập từ một URL."
           }
         }
       }
     },
-    "Import Failed": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import Failed"
+    "Import a pairing file before simulating location from a URL." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import a pairing file before simulating location from a URL."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập không thành công"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy nhập tệp ghép nối trước khi giả lập vị trí từ một URL."
           }
         }
       }
     },
-    "Import Pairing File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import Pairing File"
+    "Import a pairing file in MobileGhost first." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import a pairing file in MobileGhost first."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập tệp ghép nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy nhập tệp ghép nối trong MobileGhost trước."
           }
         }
       }
     },
-    "Import a pairing file before clearing the simulated location from a URL.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import a pairing file before clearing the simulated location from a URL."
+    "Import Bookmarks" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import Bookmarks"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy nhập tệp ghép nối trước khi xoá vị trí giả lập từ một URL."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập vị trí đã lưu"
           }
         }
       }
     },
-    "Import a pairing file before simulating location from a URL.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import a pairing file before simulating location from a URL."
+    "Import Failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import Failed"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy nhập tệp ghép nối trước khi giả lập vị trí từ một URL."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập không thành công"
           }
         }
       }
     },
-    "Import a pairing file in MobileGhost first.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import a pairing file in MobileGhost first."
+    "Import failed: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import failed: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy nhập tệp ghép nối trong MobileGhost trước."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập không thành công: %@"
           }
         }
       }
     },
-    "Import failed: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import failed: %@"
+    "Import failed: the file is not a valid MobileGhost bookmarks file." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import failed: the file is not a valid MobileGhost bookmarks file."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập không thành công: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập không thành công: tệp này không phải tệp vị trí đã lưu hợp lệ của MobileGhost."
           }
         }
       }
+    },
+    "Import pairing file" : {
+
     },
-    "Import failed: the file is not a valid MobileGhost bookmarks file.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import failed: the file is not a valid MobileGhost bookmarks file."
+    "Import Pairing File" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import Pairing File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nhập không thành công: tệp này không phải tệp vị trí đã lưu hợp lệ của MobileGhost."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập tệp ghép nối"
           }
         }
       }
     },
-    "Import your pairing file.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Import your pairing file."
+    "Import your pairing file." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import your pairing file."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy nhập tệp ghép nối của bạn."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy nhập tệp ghép nối của bạn."
           }
         }
       }
     },
-    "Imported %lld saved locations.": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Imported 1 saved location."
+    "Imported %lld saved locations." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Imported 1 saved location."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Imported %lld saved locations."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Imported %lld saved locations."
                 }
               }
             }
           }
         },
-        "vi": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Đã nhập %lld vị trí đã lưu."
+        "vi" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Đã nhập %lld vị trí đã lưu."
                 }
               }
             }
@@ -1374,317 +1543,344 @@
         }
       }
     },
-    "Imported %lld, skipped %lld already saved.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Imported %lld, skipped %lld already saved."
+    "Imported %lld, skipped %lld already saved." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imported %lld, skipped %lld already saved."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã nhập %lld, bỏ qua %lld vị trí đã có."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã nhập %lld, bỏ qua %lld vị trí đã có."
           }
         }
       }
     },
-    "Imported successfully": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Imported successfully"
+    "Imported successfully" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imported successfully"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã nhập thành công"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã nhập thành công"
           }
         }
       }
     },
-    "Importing pairing file…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Importing pairing file…"
+    "Importing pairing file…" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importing pairing file…"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang nhập tệp ghép nối…"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang nhập tệp ghép nối…"
           }
         }
       }
     },
-    "Invalid Coordinates": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invalid Coordinates"
+    "Independent derivative of TLocation and StikDebug. © Stephen Bove and contributors. Modified October 22, 2026. AGPL-3.0; no warranty." : {
+
+    },
+    "Invalid Coordinates" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Coordinates"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toạ độ không hợp lệ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toạ độ không hợp lệ"
           }
         }
       }
     },
-    "Invalid Location URL": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invalid Location URL"
+    "Invalid download URL: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid download URL: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL vị trí không hợp lệ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL tải xuống không hợp lệ: %@"
           }
         }
       }
     },
-    "Invalid Pairing File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invalid Pairing File"
+    "Invalid Location URL" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Location URL"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp ghép nối không hợp lệ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL vị trí không hợp lệ"
           }
         }
       }
     },
-    "Invalid download URL: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invalid download URL: %@"
+    "Invalid Pairing File" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Pairing File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL tải xuống không hợp lệ: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp ghép nối không hợp lệ"
           }
         }
       }
     },
-    "Language": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Language"
+    "iPhone setup" : {
+
+    },
+    "Journey details" : {
+
+    },
+    "Language" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ngôn ngữ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ngôn ngữ"
           }
         }
       }
     },
-    "Last Synced": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Last Synced"
+    "Last checked" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last checked"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đồng bộ lần cuối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra lần cuối"
           }
         }
       }
     },
-    "Last checked": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Last checked"
+    "Last Synced" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Synced"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kiểm tra lần cuối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đồng bộ lần cuối"
           }
         }
       }
     },
-    "Later": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Later"
+    "Later" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Later"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Để sau"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để sau"
           }
         }
       }
     },
-    "Latitude": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Latitude"
+    "Latitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vĩ độ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vĩ độ"
           }
         }
       }
     },
-    "Latitude %lf is out of range. It must be between -90 and 90.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Latitude %lf is out of range. It must be between -90 and 90."
+    "Latitude %lf is out of range. It must be between -90 and 90." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude %lf is out of range. It must be between -90 and 90."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vĩ độ %lf nằm ngoài phạm vi. Giá trị phải từ -90 đến 90."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vĩ độ %lf nằm ngoài phạm vi. Giá trị phải từ -90 đến 90."
           }
         }
       }
     },
-    "Latitude must be between -90 and 90. Longitude must be between -180 and 180.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Latitude must be between -90 and 90. Longitude must be between -180 and 180."
+    "Latitude must be between -90 and 90. Longitude must be between -180 and 180." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude must be between -90 and 90. Longitude must be between -180 and 180."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vĩ độ phải từ -90 đến 90. Kinh độ phải từ -180 đến 180."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vĩ độ phải từ -90 đến 90. Kinh độ phải từ -180 đến 180."
           }
         }
       }
     },
-    "Link Sync File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Link Sync File"
+    "less than a minute" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "less than a minute"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Liên kết tệp đồng bộ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chưa đến một phút"
           }
         }
       }
     },
-    "Link a JSON file — one kept in iCloud Drive works well — and MobileGhost keeps it up to date, so your bookmarks survive reinstalling the app.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Link a JSON file — one kept in iCloud Drive works well — and MobileGhost keeps it up to date, so your bookmarks survive reinstalling the app."
+    "Library" : {
+
+    },
+    "Link a JSON file — one kept in iCloud Drive works well — and MobileGhost keeps it up to date, so your bookmarks survive reinstalling the app." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Link a JSON file — one kept in iCloud Drive works well — and MobileGhost keeps it up to date, so your bookmarks survive reinstalling the app."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy liên kết một tệp JSON — để trong iCloud Drive là tiện nhất — MobileGhost sẽ tự cập nhật tệp đó, nên các vị trí đã lưu vẫn còn sau khi cài lại ứng dụng."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy liên kết một tệp JSON — để trong iCloud Drive là tiện nhất — MobileGhost sẽ tự cập nhật tệp đó, nên các vị trí đã lưu vẫn còn sau khi cài lại ứng dụng."
           }
         }
       }
     },
-    "Linked File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Linked File"
+    "Link Sync File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Link Sync File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp đã liên kết"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liên kết tệp đồng bộ"
           }
         }
       }
     },
-    "Linked “%@”.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Linked “%@”."
+    "Linked “%@”." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linked “%@”."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã liên kết “%@”."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã liên kết “%@”."
           }
         }
       }
     },
-    "Linked “%@”. Added %lld saved locations from the file.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Linked “%1$@”. Added %#@added@ from the file."
+    "Linked “%@”. Added %lld saved locations from the file." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linked “%1$@”. Added %#@added@ from the file."
           },
-          "substitutions": {
-            "added": {
-              "argNum": 2,
-              "formatSpecifier": "lld",
-              "variations": {
-                "plural": {
-                  "one": {
-                    "stringUnit": {
-                      "state": "translated",
-                      "value": "%arg saved location"
+          "substitutions" : {
+            "added" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg saved location"
                     }
                   },
-                  "other": {
-                    "stringUnit": {
-                      "state": "translated",
-                      "value": "%arg saved locations"
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg saved locations"
                     }
                   }
                 }
@@ -1692,21 +1888,21 @@
             }
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã liên kết “%1$@”. Đã thêm %#@added@ từ tệp."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã liên kết “%1$@”. Đã thêm %#@added@ từ tệp."
           },
-          "substitutions": {
-            "added": {
-              "argNum": 2,
-              "formatSpecifier": "lld",
-              "variations": {
-                "plural": {
-                  "other": {
-                    "stringUnit": {
-                      "state": "translated",
-                      "value": "%arg vị trí đã lưu"
+          "substitutions" : {
+            "added" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg vị trí đã lưu"
                     }
                   }
                 }
@@ -1716,1297 +1912,1708 @@
         }
       }
     },
-    "Linked “%@”. Added %lld, skipped %lld already saved.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Linked “%@”. Added %lld, skipped %lld already saved."
+    "Linked “%@”. Added %lld, skipped %lld already saved." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linked “%@”. Added %lld, skipped %lld already saved."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã liên kết “%@”. Đã thêm %lld, bỏ qua %lld vị trí đã có."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã liên kết “%@”. Đã thêm %lld, bỏ qua %lld vị trí đã có."
           }
         }
       }
     },
-    "Locate Me": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Locate Me"
+    "Linked File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linked File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vị trí của tôi"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp đã liên kết"
           }
         }
       }
     },
-    "Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Location"
+    "Locate Me" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locate Me"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vị trí của tôi"
           }
         }
       }
     },
-    "Location Permission Needed": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Location Permission Needed"
+    "Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cần quyền truy cập vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vị trí"
           }
         }
       }
     },
-    "Longitude": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Longitude"
+    "Location permission" : {
+
+    },
+    "Location Permission Needed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location Permission Needed"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cần quyền truy cập vị trí"
+          }
+        }
+      }
+    },
+    "Longitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitude"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kinh độ"
+          }
+        }
+      }
+    },
+    "Longitude %lf is out of range. It must be between -180 and 180." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitude %lf is out of range. It must be between -180 and 180."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kinh độ %lf nằm ngoài phạm vi. Giá trị phải từ -180 đến 180."
+          }
+        }
+      }
+    },
+    "Make sure LocalDevVPN is using the default %@ address." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make sure LocalDevVPN is using the default %@ address."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đảm bảo LocalDevVPN đang dùng địa chỉ mặc định %@."
+          }
+        }
+      }
+    },
+    "Map" : {
+
+    },
+    "Mobile Ghost" : {
+
+    },
+    "Mobile Ghost 0.4.1 · iPhone location simulation" : {
+
+    },
+    "MobileGhost %@ • iOS %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost %@ • iOS %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost %@ • iOS %@"
+          }
+        }
+      }
+    },
+    "MobileGhost could not clear the simulated location (error %lld). It may already have been cleared." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost could not clear the simulated location (error %lld). It may already have been cleared."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost không thể xoá vị trí giả lập (lỗi %lld). Có thể vị trí đã được xoá trước đó."
+          }
+        }
+      }
+    },
+    "MobileGhost could not reach this device. Connect LocalDevVPN and make sure Wi-Fi is joined to a network. (%@)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost could not reach this device. Connect LocalDevVPN and make sure Wi-Fi is joined to a network. (%@)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost không kết nối được tới thiết bị. Hãy bật LocalDevVPN và đảm bảo Wi-Fi đã vào mạng. (%@)"
+          }
+        }
+      }
+    },
+    "MobileGhost could not simulate the location (error %lld). Make sure the device is connected and the Developer Disk Image (DDI) is mounted." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost could not simulate the location (error %lld). Make sure the device is connected and the Developer Disk Image (DDI) is mounted."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost không thể giả lập vị trí (lỗi %lld). Hãy đảm bảo thiết bị đã kết nối và Developer Disk Image (DDI) đã được gắn."
+          }
+        }
+      }
+    },
+    "MobileGhost expires in %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost expires in %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost sẽ hết hạn sau %@"
+          }
+        }
+      }
+    },
+    "MobileGhost has expired" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost has expired"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost đã hết hạn"
           }
+        }
+      }
+    },
+    "MobileGhost lost the location-simulation session on this device and could not rebuild it, so the position is no longer being kept up to date — the device has most likely returned to its real location. Nothing was sent to the device. Reconnect LocalDevVPN, then tap Retry to reconnect before simulating again." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost lost the location-simulation session on this device and could not rebuild it, so the position is no longer being kept up to date — the device has most likely returned to its real location. Nothing was sent to the device. Reconnect LocalDevVPN, then tap Retry to reconnect before simulating again."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost đã mất phiên giả lập vị trí trên thiết bị này và không thể tạo lại, nên vị trí không còn được cập nhật — nhiều khả năng thiết bị đã trở lại vị trí thật. Không có lệnh nào được gửi tới thiết bị. Hãy kết nối lại LocalDevVPN, rồi chạm Thử lại để kết nối trước khi giả lập lại."
+          }
+        }
+      }
+    },
+    "MobileGhost needs a connection to this device before it can simulate a location." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost needs a connection to this device before it can simulate a location."
+          }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kinh độ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost cần kết nối tới thiết bị trước khi có thể giả lập vị trí."
           }
         }
       }
     },
-    "Longitude %lf is out of range. It must be between -180 and 180.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Longitude %lf is out of range. It must be between -180 and 180."
+    "MobileGhost needs location access to find your current position. Note: while a simulated location is active, iOS reports the simulated position." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost needs location access to find your current position. Note: while a simulated location is active, iOS reports the simulated position."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kinh độ %lf nằm ngoài phạm vi. Giá trị phải từ -180 đến 180."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost cần quyền truy cập vị trí để tìm vị trí hiện tại của bạn. Lưu ý: khi đang giả lập vị trí, iOS sẽ báo về vị trí giả lập."
           }
         }
       }
     },
-    "Make sure LocalDevVPN is using the default %@ address.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Make sure LocalDevVPN is using the default %@ address."
+    "MobileGhost reads this from the device, and can only check it while connected." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost reads this from the device, and can only check it while connected."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đảm bảo LocalDevVPN đang dùng địa chỉ mặc định %@."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MobileGhost đọc thông tin này từ thiết bị, nên chỉ kiểm tra được khi đang kết nối."
           }
         }
       }
     },
-    "Name": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name"
+    "Name" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tên"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tên"
           }
         }
       }
+    },
+    "Name this journey" : {
+
     },
-    "Natural GPS Drift": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Natural GPS Drift"
+    "Natural GPS Drift" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natural GPS Drift"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trôi GPS tự nhiên"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trôi GPS tự nhiên"
           }
         }
       }
     },
-    "No Bookmarks": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Bookmarks"
+    "Needs attention" : {
+
+    },
+    "No Bookmarks" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Bookmarks"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa có vị trí nào"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa có vị trí nào"
           }
         }
       }
     },
-    "No GPS fix was available. Try again, ideally with a clear view of the sky.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No GPS fix was available. Try again, ideally with a clear view of the sky."
+    "No bookmarks match \"%@\"." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No bookmarks match \"%@\"."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không bắt được tín hiệu GPS. Hãy thử lại, tốt nhất là ở nơi thoáng trời."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có vị trí nào khớp với “%@”."
           }
         }
       }
     },
-    "No Matches": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Matches"
+    "No GPS fix was available. Try again, ideally with a clear view of the sky." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No GPS fix was available. Try again, ideally with a clear view of the sky."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không có kết quả"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không bắt được tín hiệu GPS. Hãy thử lại, tốt nhất là ở nơi thoáng trời."
           }
         }
       }
     },
-    "No bookmarks match \"%@\".": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No bookmarks match \"%@\"."
+    "No Matches" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Matches"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không có vị trí nào khớp với “%@”."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có kết quả"
           }
         }
       }
     },
-    "No profile on this device": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No profile on this device"
+    "No profile on this device" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No profile on this device"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không có hồ sơ trên thiết bị này"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có hồ sơ trên thiết bị này"
           }
         }
       }
     },
-    "No saved locations": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No saved locations"
+    "No saved locations" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No saved locations"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa có vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa có vị trí đã lưu"
           }
         }
       }
     },
-    "No sync file is linked.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No sync file is linked."
+    "No sync file is linked." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No sync file is linked."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa liên kết tệp đồng bộ nào."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa liên kết tệp đồng bộ nào."
           }
         }
       }
     },
-    "Not checked yet": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not checked yet"
+    "Not checked yet" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not checked yet"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa kiểm tra"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa kiểm tra"
           }
         }
       }
     },
-    "OK": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+    "OK" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
+    },
+    "On the move" : {
+
     },
-    "Open LocalDevVPN": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open LocalDevVPN"
+    "Open iPhone Settings" : {
+
+    },
+    "Open LocalDevVPN" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open LocalDevVPN"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở LocalDevVPN"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở LocalDevVPN"
           }
         }
       }
     },
-    "Open LocalDevVPN and confirm the VPN is connected.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open LocalDevVPN and confirm the VPN is connected."
+    "Open LocalDevVPN and confirm the VPN is connected." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open LocalDevVPN and confirm the VPN is connected."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở LocalDevVPN và kiểm tra VPN đã kết nối."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở LocalDevVPN và kiểm tra VPN đã kết nối."
           }
         }
       }
     },
-    "Open LocalDevVPN and connect the VPN, and make sure Wi-Fi is joined to a network.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open LocalDevVPN and connect the VPN, and make sure Wi-Fi is joined to a network."
+    "Open LocalDevVPN and connect the VPN, and make sure Wi-Fi is joined to a network." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open LocalDevVPN and connect the VPN, and make sure Wi-Fi is joined to a network."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở LocalDevVPN và bật VPN, đồng thời đảm bảo Wi-Fi đã vào mạng."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở LocalDevVPN và bật VPN, đồng thời đảm bảo Wi-Fi đã vào mạng."
           }
         }
       }
+    },
+    "Open notification settings" : {
+
     },
-    "Open Settings": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Settings"
+    "Open Settings" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở Cài đặt"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở Cài đặt"
           }
         }
       }
     },
-    "Open Settings and check the target IP address.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Settings and check the target IP address."
+    "Open Settings and check the target IP address." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings and check the target IP address."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở Cài đặt và kiểm tra địa chỉ IP đích."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở Cài đặt và kiểm tra địa chỉ IP đích."
           }
         }
       }
     },
-    "Open SideStore": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open SideStore"
+    "Open SideStore" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open SideStore"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mở SideStore"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở SideStore"
           }
         }
       }
     },
-    "Open SideStore and refresh MobileGhost to re-sign it. If the signature fully expires the app will not launch and must be reinstalled.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open SideStore and refresh MobileGhost to re-sign it. If the signature fully expires the app will not launch and must be reinstalled."
+    "Open SideStore and refresh MobileGhost to re-sign it. If the signature fully expires the app will not launch and must be reinstalled." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open SideStore and refresh MobileGhost to re-sign it. If the signature fully expires the app will not launch and must be reinstalled."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hãy mở SideStore và làm mới MobileGhost để ký lại. Nếu chữ ký hết hạn hẳn, ứng dụng sẽ không mở được nữa và phải cài lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy mở SideStore và làm mới MobileGhost để ký lại. Nếu chữ ký hết hạn hẳn, ứng dụng sẽ không mở được nữa và phải cài lại."
           }
         }
       }
     },
-    "Pairing File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pairing File"
+    "OpenStreetMap" : {
+
+    },
+    "OpenStreetMap contributors · ODbL" : {
+
+    },
+    "OpenStreetMap often includes smaller footpaths. Add intermediate pins to guide your route. Coverage varies; no provider includes every path." : {
+
+    },
+    "Pairing File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pairing File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp ghép nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp ghép nối"
           }
         }
       }
     },
-    "Pairing File Guide": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pairing File Guide"
+    "Pairing File Guide" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pairing File Guide"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hướng dẫn tệp ghép nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hướng dẫn tệp ghép nối"
           }
         }
       }
     },
-    "Pairing File Required": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pairing File Required"
+    "Pairing file imported" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pairing file imported"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cần có tệp ghép nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã nhập tệp ghép nối"
           }
         }
       }
     },
-    "Pairing file imported": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pairing file imported"
+    "Pairing File Required" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pairing File Required"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã nhập tệp ghép nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cần có tệp ghép nối"
           }
         }
       }
     },
-    "Pin": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pin"
+    "Pairing-file guide" : {
+
+    },
+    "Pause route" : {
+
+    },
+    "Permission" : {
+
+    },
+    "Pin" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ghim"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ghim"
           }
         }
       }
+    },
+    "Places and the last session point are stored on this iPhone. Apple Maps receives search and Apple route requests. The Walking map loads OpenStreetMap tiles; walking routes send stop coordinates to routing.openstreetmap.de. Bus-stop searches send the map centre to OpenStreetMap’s Overpass service. Developer images download from the upstream GitHub source. No analytics or app account." : {
+
     },
-    "Preparing download…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preparing download…"
+    "Plan a journey" : {
+
+    },
+    "Plan route" : {
+
+    },
+    "Planning…" : {
+
+    },
+    "Prepare developer image" : {
+
+    },
+    "Preparing download…" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing download…"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang chuẩn bị tải…"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang chuẩn bị tải…"
           }
         }
       }
     },
-    "Read from the provisioning profile on this device, so it follows a SideStore refresh.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Read from the provisioning profile on this device, so it follows a SideStore refresh."
+    "Preparing…" : {
+
+    },
+    "Previous departure: %@" : {
+
+    },
+    "Privacy and credits" : {
+
+    },
+    "Read from the provisioning profile on this device, so it follows a SideStore refresh." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read from the provisioning profile on this device, so it follows a SideStore refresh."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Được đọc từ hồ sơ cấp phép trên thiết bị này, nên sẽ cập nhật theo mỗi lần làm mới bằng SideStore."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Được đọc từ hồ sơ cấp phép trên thiết bị này, nên sẽ cập nhật theo mỗi lần làm mới bằng SideStore."
           }
         }
       }
+    },
+    "Ready to travel" : {
+
     },
-    "Reconnect LocalDevVPN, then try again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reconnect LocalDevVPN, then try again."
+    "Receive a notification after the phone accepts the first movement on each route, including weekly departures. Focus and iPhone notification settings control sounds and banners." : {
+
+    },
+    "Reconnect LocalDevVPN, then try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnect LocalDevVPN, then try again."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kết nối lại LocalDevVPN rồi thử lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kết nối lại LocalDevVPN rồi thử lại."
           }
         }
       }
     },
-    "Reconnect Wi-Fi and LocalDevVPN, then try again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reconnect Wi-Fi and LocalDevVPN, then try again."
+    "Reconnect Wi-Fi and LocalDevVPN, then try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconnect Wi-Fi and LocalDevVPN, then try again."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kết nối lại Wi-Fi và LocalDevVPN rồi thử lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kết nối lại Wi-Fi và LocalDevVPN rồi thử lại."
           }
         }
       }
     },
-    "Redownload": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redownload"
+    "Redownload" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redownload"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tải lại"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tải lại"
           }
         }
       }
     },
-    "Redownload DDI": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redownload DDI"
+    "Redownload DDI" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redownload DDI"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tải lại DDI"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tải lại DDI"
           }
         }
       }
     },
-    "Redownload DDI Files?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redownload DDI Files?"
+    "Redownload DDI Files?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redownload DDI Files?"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tải lại các tệp DDI?"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tải lại các tệp DDI?"
           }
         }
       }
     },
-    "Refreshing keeps your pairing file and bookmarks.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Refreshing keeps your pairing file and bookmarks."
+    "Refreshing keeps your pairing file and bookmarks." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refreshing keeps your pairing file and bookmarks."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Làm mới vẫn giữ nguyên tệp ghép nối và các vị trí đã lưu."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Làm mới vẫn giữ nguyên tệp ghép nối và các vị trí đã lưu."
           }
         }
       }
     },
-    "Removing existing DDI files…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Removing existing DDI files…"
+    "Remove" : {
+
+    },
+    "Removing existing DDI files…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removing existing DDI files…"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang xoá các tệp DDI hiện có…"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang xoá các tệp DDI hiện có…"
           }
         }
       }
     },
-    "Rename": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rename"
+    "Rename" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rename"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đổi tên"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đổi tên"
           }
         }
       }
     },
-    "Rename Bookmark": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rename Bookmark"
+    "Rename Bookmark" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rename Bookmark"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đổi tên vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đổi tên vị trí"
           }
         }
       }
+    },
+    "Renew before expiry. For an Xcode installation, connect to your Mac and Run the same project using the same signing team. For a SideStore installation, refresh it in SideStore. Keep the existing app installed." : {
+
     },
-    "Replace Pairing File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Replace Pairing File"
+    "Repeat on" : {
+
+    },
+    "Repeat weekly" : {
+
+    },
+    "Replace Pairing File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replace Pairing File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thay tệp ghép nối"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thay tệp ghép nối"
           }
         }
       }
     },
-    "Restart MobileGhost, then try again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restart MobileGhost, then try again."
+    "Report missing path" : {
+
+    },
+    "Restart MobileGhost, then try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restart MobileGhost, then try again."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Khởi động lại MobileGhost rồi thử lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khởi động lại MobileGhost rồi thử lại."
           }
         }
       }
+    },
+    "Restore" : {
+
     },
-    "Retry": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retry"
+    "Resume route" : {
+
+    },
+    "Retry" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thử lại"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thử lại"
           }
         }
       }
+    },
+    "Retry connection" : {
+
     },
-    "Return to Real Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Return to Real Location"
+    "Return to Real Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Return to Real Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Về vị trí thật"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Về vị trí thật"
           }
         }
       }
+    },
+    "Route" : {
+
+    },
+    "Route notifications" : {
+
     },
-    "Save": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save"
+    "Runs at the selected time on each chosen day, starting on or after the date below. Uses %@, including daylight-saving changes." : {
+
+    },
+    "Satellite" : {
+
+    },
+    "Save" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu"
           }
         }
       }
     },
-    "Save Bookmark": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save Bookmark"
+    "Save Bookmark" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Bookmark"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lưu vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu vị trí"
           }
         }
       }
     },
-    "Saved Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saved Location"
+    "Save selected place" : {
+
+    },
+    "Saved Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vị trí đã lưu"
           }
         }
       }
+    },
+    "Saved places" : {
+
     },
-    "Saved to Bookmarks": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saved to Bookmarks"
+    "Saved to Bookmarks" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved to Bookmarks"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã lưu vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã lưu vị trí"
           }
         }
       }
     },
-    "Search bookmarks": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search bookmarks"
+    "Schedules" : {
+
+    },
+    "Search" : {
+
+    },
+    "Search a place or tap anywhere on the map." : {
+
+    },
+    "Search bookmarks" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search bookmarks"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tìm vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tìm vị trí đã lưu"
           }
         }
       }
     },
-    "Search location...": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search location..."
+    "Search location..." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search location..."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tìm địa điểm..."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tìm địa điểm..."
           }
         }
       }
+    },
+    "Search place or coordinates" : {
+
     },
-    "Select New File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Select New File"
+    "Select New File" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select New File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chọn tệp mới"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn tệp mới"
           }
         }
       }
     },
-    "Set Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Set Location"
+    "Selected location" : {
+
+    },
+    "Set location" : {
+
+    },
+    "Set Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đặt vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đặt vị trí"
           }
         }
       }
     },
-    "Sets this device's simulated GPS position to a latitude and longitude.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sets this device's simulated GPS position to a latitude and longitude."
+    "Sets this device's simulated GPS position to a latitude and longitude." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sets this device's simulated GPS position to a latitude and longitude."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đặt vị trí GPS giả lập của thiết bị theo vĩ độ và kinh độ."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đặt vị trí GPS giả lập của thiết bị theo vĩ độ và kinh độ."
           }
         }
       }
     },
-    "Sets this device's simulated GPS position to one of your saved locations in MobileGhost.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sets this device's simulated GPS position to one of your saved locations in MobileGhost."
+    "Sets this device's simulated GPS position to one of your saved locations in MobileGhost." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sets this device's simulated GPS position to one of your saved locations in MobileGhost."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đặt vị trí GPS giả lập của thiết bị theo một vị trí đã lưu trong MobileGhost."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đặt vị trí GPS giả lập của thiết bị theo một vị trí đã lưu trong MobileGhost."
           }
         }
       }
     },
-    "Settings": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "Settings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cài đặt"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cài đặt"
           }
         }
       }
+    },
+    "Setup" : {
+
+    },
+    "SideStore users: open SideStore" : {
+
     },
-    "Signing expires": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing expires"
+    "Signing expires" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing expires"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chữ ký hết hạn"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chữ ký hết hạn"
           }
         }
       }
     },
-    "Simulate ${bookmark}": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulate ${bookmark}"
+    "Simulate ${bookmark}" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulate ${bookmark}"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập ${bookmark}"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập ${bookmark}"
           }
         }
       }
     },
-    "Simulate ${latitude}, ${longitude}": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulate ${latitude}, ${longitude}"
+    "Simulate ${latitude}, ${longitude}" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulate ${latitude}, ${longitude}"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập ${latitude}, ${longitude}"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập ${latitude}, ${longitude}"
           }
         }
       }
     },
-    "Simulate Coordinates": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulate Coordinates"
+    "Simulate Coordinates" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulate Coordinates"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập toạ độ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập toạ độ"
           }
         }
       }
     },
-    "Simulate Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulate Location"
+    "Simulate Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulate Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập vị trí"
           }
         }
       }
     },
-    "Simulate Location?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulate Location?"
+    "Simulate Location?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulate Location?"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập vị trí?"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập vị trí?"
           }
         }
       }
     },
-    "Simulate Saved Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulate Saved Location"
+    "Simulate Saved Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulate Saved Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập vị trí đã lưu"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập vị trí đã lưu"
           }
         }
       }
     },
-    "Simulating %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulating %@"
+    "Simulating %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulating %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang giả lập %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang giả lập %@"
           }
         }
       }
     },
-    "Simulating the location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulating the location"
+    "Simulating the location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulating the location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Việc giả lập vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Việc giả lập vị trí"
           }
         }
       }
     },
-    "Simulation": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulation"
+    "Simulation" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulation"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập"
           }
         }
       }
     },
-    "Simulation Failed": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulation Failed"
+    "Simulation Failed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulation Failed"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập không thành công"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập không thành công"
           }
         }
       }
     },
-    "Simulation Stopped": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulation Stopped"
+    "Simulation Stopped" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulation Stopped"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giả lập đã dừng"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giả lập đã dừng"
           }
         }
       }
     },
-    "Simulation stopped — map is waiting for your real location (slower indoors)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulation stopped — map is waiting for your real location (slower indoors)"
+    "Simulation stopped — map is waiting for your real location (slower indoors)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulation stopped — map is waiting for your real location (slower indoors)"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã dừng giả lập — bản đồ đang chờ vị trí thật (chậm hơn trong nhà)"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã dừng giả lập — bản đồ đang chờ vị trí thật (chậm hơn trong nhà)"
           }
         }
       }
     },
-    "Starting downloads…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Starting downloads…"
+    "Some map tiles failed to load." : {
+
+    },
+    "Source code and license" : {
+
+    },
+    "Source, license and setup" : {
+
+    },
+    "Speed" : {
+
+    },
+    "Start moves the phone to the first stop. Allow background location to continue after switching apps." : {
+
+    },
+    "Start on or after" : {
+
+    },
+    "Start route" : {
+
+    },
+    "Starting downloads…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting downloads…"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bắt đầu tải…"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bắt đầu tải…"
           }
         }
       }
     },
-    "Stop": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop"
+    "Stop" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dừng"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dừng"
           }
         }
       }
+    },
+    "Stop name" : {
+
     },
-    "Stop Simulating": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop Simulating"
+    "Stop Simulating" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop Simulating"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dừng giả lập"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dừng giả lập"
           }
         }
       }
     },
-    "Stop Simulating Location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop Simulating Location"
+    "Stop simulating location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop simulating location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dừng giả lập vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dừng giả lập vị trí"
           }
         }
       }
     },
-    "Stop simulating location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop simulating location"
+    "Stop Simulating Location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop Simulating Location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dừng giả lập vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dừng giả lập vị trí"
           }
         }
       }
     },
-    "Stopped simulating location": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stopped simulating location"
+    "Stopped simulating location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stopped simulating location"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã dừng giả lập vị trí"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã dừng giả lập vị trí"
           }
         }
       }
     },
-    "Sync Now": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sync Now"
+    "Sync failed: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync failed: %@"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đồng bộ ngay"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đồng bộ không thành công: %@"
           }
         }
       }
     },
-    "Sync failed: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sync failed: %@"
+    "Sync file" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync file"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đồng bộ không thành công: %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp đồng bộ"
           }
         }
       }
     },
-    "Sync file": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sync file"
+    "Sync file unlinked. The file itself was not deleted." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync file unlinked. The file itself was not deleted."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp đồng bộ"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã bỏ liên kết tệp đồng bộ. Tệp vẫn còn nguyên."
           }
         }
       }
     },
-    "Sync file unlinked. The file itself was not deleted.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sync file unlinked. The file itself was not deleted."
+    "Sync Now" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync Now"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã bỏ liên kết tệp đồng bộ. Tệp vẫn còn nguyên."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đồng bộ ngay"
           }
         }
       }
     },
-    "Synced. Added %lld saved locations.": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Synced. Added 1 saved location."
+    "Synced. Added %lld saved locations." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Synced. Added 1 saved location."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Synced. Added %lld saved locations."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Synced. Added %lld saved locations."
                 }
               }
             }
           }
         },
-        "vi": {
-          "variations": {
-            "plural": {
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Đã đồng bộ. Đã thêm %lld vị trí đã lưu."
+        "vi" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Đã đồng bộ. Đã thêm %lld vị trí đã lưu."
                 }
               }
             }
@@ -3014,646 +3621,517 @@
         }
       }
     },
-    "Synced. Added %lld, skipped %lld already saved.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Synced. Added %lld, skipped %lld already saved."
+    "Synced. Added %lld, skipped %lld already saved." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synced. Added %lld, skipped %lld already saved."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã đồng bộ. Đã thêm %lld, bỏ qua %lld vị trí đã có."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã đồng bộ. Đã thêm %lld, bỏ qua %lld vị trí đã có."
           }
         }
       }
     },
-    "Synced. The file had nothing new.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Synced. The file had nothing new."
+    "Synced. The file had nothing new." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synced. The file had nothing new."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã đồng bộ. Tệp không có gì mới."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã đồng bộ. Tệp không có gì mới."
           }
         }
       }
     },
-    "Syncing bookmarks…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Syncing bookmarks…"
+    "Syncing bookmarks…" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Syncing bookmarks…"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang đồng bộ vị trí đã lưu…"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang đồng bộ vị trí đã lưu…"
           }
         }
       }
     },
-    "System": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "System"
+    "System" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Theo hệ thống"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theo hệ thống"
           }
         }
       }
     },
-    "MobileGhost %@ • iOS %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost %@ • iOS %@"
+    "Tap map to drop pin" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap map to drop pin"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost %@ • iOS %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm vào bản đồ để thả ghim"
           }
         }
       }
     },
-    "MobileGhost could not clear the simulated location (error %lld). It may already have been cleared.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost could not clear the simulated location (error %lld). It may already have been cleared."
+    "Target Device IP" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target Device IP"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost không thể xoá vị trí giả lập (lỗi %lld). Có thể vị trí đã được xoá trước đó."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IP thiết bị đích"
           }
         }
       }
     },
-    "MobileGhost could not reach this device. Connect LocalDevVPN and make sure Wi-Fi is joined to a network. (%@)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost could not reach this device. Connect LocalDevVPN and make sure Wi-Fi is joined to a network. (%@)"
+    "That file contains no saved locations." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That file contains no saved locations."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost không kết nối được tới thiết bị. Hãy bật LocalDevVPN và đảm bảo Wi-Fi đã vào mạng. (%@)"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp này không có vị trí đã lưu nào."
           }
         }
       }
     },
-    "MobileGhost could not simulate the location (error %lld). Make sure the device is connected and the Developer Disk Image (DDI) is mounted.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost could not simulate the location (error %lld). Make sure the device is connected and the Developer Disk Image (DDI) is mounted."
+    "That saved location no longer exists in MobileGhost." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That saved location no longer exists in MobileGhost."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost không thể giả lập vị trí (lỗi %lld). Hãy đảm bảo thiết bị đã kết nối và Developer Disk Image (DDI) đã được gắn."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vị trí đã lưu đó không còn trong MobileGhost."
           }
         }
       }
     },
-    "MobileGhost expires in %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost expires in %@"
+    "The app could not reach the device before the connection timed out." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app could not reach the device before the connection timed out."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost sẽ hết hạn sau %@"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ứng dụng không tới được thiết bị trước khi hết thời gian chờ."
           }
         }
       }
     },
-    "MobileGhost has expired": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost has expired"
+    "The configured target IP address is not valid." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The configured target IP address is not valid."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost đã hết hạn"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Địa chỉ IP đích đã cấu hình không hợp lệ."
           }
         }
       }
     },
-    "MobileGhost lost the location-simulation session on this device and could not rebuild it, so the position is no longer being kept up to date — the device has most likely returned to its real location. Nothing was sent to the device. Reconnect LocalDevVPN, then tap Retry to reconnect before simulating again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost lost the location-simulation session on this device and could not rebuild it, so the position is no longer being kept up to date — the device has most likely returned to its real location. Nothing was sent to the device. Reconnect LocalDevVPN, then tap Retry to reconnect before simulating again."
+    "The connection to this device could not be created." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The connection to this device could not be created."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost đã mất phiên giả lập vị trí trên thiết bị này và không thể tạo lại, nên vị trí không còn được cập nhật — nhiều khả năng thiết bị đã trở lại vị trí thật. Không có lệnh nào được gửi tới thiết bị. Hãy kết nối lại LocalDevVPN, rồi chạm Thử lại để kết nối trước khi giả lập lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không tạo được kết nối tới thiết bị."
           }
         }
       }
     },
-    "MobileGhost needs a connection to this device before it can simulate a location.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost needs a connection to this device before it can simulate a location."
+    "The DDI server returned an invalid response." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The DDI server returned an invalid response."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost cần kết nối tới thiết bị trước khi có thể giả lập vị trí."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máy chủ DDI trả về phản hồi không hợp lệ."
           }
         }
       }
     },
-    "MobileGhost needs location access to find your current position. Note: while a simulated location is active, iOS reports the simulated position.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost needs location access to find your current position. Note: while a simulated location is active, iOS reports the simulated position."
+    "The DDI server returned HTTP %lld." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The DDI server returned HTTP %lld."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost cần quyền truy cập vị trí để tìm vị trí hiện tại của bạn. Lưu ý: khi đang giả lập vị trí, iOS sẽ báo về vị trí giả lập."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máy chủ DDI trả về HTTP %lld."
           }
         }
       }
     },
-    "MobileGhost reads this from the device, and can only check it while connected.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost reads this from the device, and can only check it while connected."
+    "The Developer Disk Image (DDI) is not mounted yet. Open MobileGhost and wait for setup to finish, then try again." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Developer Disk Image (DDI) is not mounted yet. Open MobileGhost and wait for setup to finish, then try again."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MobileGhost đọc thông tin này từ thiết bị, nên chỉ kiểm tra được khi đang kết nối."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Disk Image (DDI) chưa được gắn. Hãy mở MobileGhost và đợi thiết lập xong, rồi thử lại."
           }
         }
       }
     },
-    "Tap map to drop pin": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap map to drop pin"
+    "The device or VPN closed the connection before setup finished." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The device or VPN closed the connection before setup finished."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chạm vào bản đồ để thả ghim"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thiết bị hoặc VPN đã đóng kết nối trước khi thiết lập xong."
           }
         }
       }
     },
-    "Target Device IP": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Target Device IP"
+    "The file was saved, but MobileGhost could not link it. Tap Link Sync File and choose it." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The file was saved, but MobileGhost could not link it. Tap Link Sync File and choose it."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "IP thiết bị đích"
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã lưu tệp, nhưng MobileGhost chưa liên kết được. Hãy chạm Liên kết tệp đồng bộ và chọn tệp đó."
           }
         }
       }
     },
-    "That file contains no saved locations.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "That file contains no saved locations."
+    "The new language is applied the next time you open MobileGhost." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The new language is applied the next time you open MobileGhost."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp này không có vị trí đã lưu nào."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ngôn ngữ mới sẽ được áp dụng trong lần mở MobileGhost tiếp theo."
           }
         }
       }
     },
-    "That saved location no longer exists in MobileGhost.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "That saved location no longer exists in MobileGhost."
+    "The pairing file may be invalid or expired. You can import a new pairing file to replace it." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The pairing file may be invalid or expired. You can import a new pairing file to replace it."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vị trí đã lưu đó không còn trong MobileGhost."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp ghép nối có thể không hợp lệ hoặc đã hết hạn. Bạn có thể nhập tệp ghép nối mới để thay thế."
           }
         }
       }
     },
-    "The DDI server returned HTTP %lld.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The DDI server returned HTTP %lld."
+    "The signing certificate for this install has lapsed, so MobileGhost will not launch again until it is re-signed. Open SideStore and refresh MobileGhost to fix it." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The signing certificate for this install has lapsed, so MobileGhost will not launch again until it is re-signed. Open SideStore and refresh MobileGhost to fix it."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Máy chủ DDI trả về HTTP %lld."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chứng chỉ ký của bản cài này đã hết hạn, nên MobileGhost sẽ không mở lại được cho tới khi được ký lại. Hãy mở SideStore và làm mới MobileGhost để khắc phục."
           }
         }
       }
     },
-    "The DDI server returned an invalid response.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The DDI server returned an invalid response."
+    "The sync file could not be opened. It may have been moved or deleted, or not downloaded from iCloud yet." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The sync file could not be opened. It may have been moved or deleted, or not downloaded from iCloud yet."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Máy chủ DDI trả về phản hồi không hợp lệ."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không mở được tệp đồng bộ. Có thể tệp đã bị di chuyển, bị xoá, hoặc chưa tải về từ iCloud."
           }
         }
       }
     },
-    "The Developer Disk Image (DDI) is not mounted yet. Open MobileGhost and wait for setup to finish, then try again.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The Developer Disk Image (DDI) is not mounted yet. Open MobileGhost and wait for setup to finish, then try again."
+    "The sync file is not a valid MobileGhost bookmarks file." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The sync file is not a valid MobileGhost bookmarks file."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Developer Disk Image (DDI) chưa được gắn. Hãy mở MobileGhost và đợi thiết lập xong, rồi thử lại."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp đồng bộ không phải tệp vị trí đã lưu hợp lệ của MobileGhost."
           }
         }
       }
     },
-    "The VPN route to the device is not available.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The VPN route to the device is not available."
+    "The VPN route to the device is not available." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The VPN route to the device is not available."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không có đường VPN tới thiết bị."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có đường VPN tới thiết bị."
           }
         }
       }
     },
-    "The app could not reach the device before the connection timed out.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The app could not reach the device before the connection timed out."
+    "This installation needs to be re-signed. If installed from Xcode, connect to your Mac and Run the same project again. If installed with SideStore, refresh it there. Do not delete the app." : {
+
+    },
+    "Time zone: %@" : {
+
+    },
+    "Travel mode" : {
+
+    },
+    "Try Again" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try Again"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ứng dụng không tới được thiết bị trước khi hết thời gian chờ."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thử lại"
           }
         }
       }
     },
-    "The configured target IP address is not valid.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The configured target IP address is not valid."
+    "Try switching Wi-Fi off and on." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try switching Wi-Fi off and on."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Địa chỉ IP đích đã cấu hình không hợp lệ."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thử tắt rồi bật lại Wi-Fi."
           }
         }
       }
     },
-    "The connection to this device could not be created.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The connection to this device could not be created."
+    "Tunnel" : {
+
+    },
+    "Unlink Sync File" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlink Sync File"
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không tạo được kết nối tới thiết bị."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bỏ liên kết tệp đồng bộ"
           }
         }
       }
     },
-    "The device or VPN closed the connection before setup finished.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The device or VPN closed the connection before setup finished."
+    "Use the default %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the default %@."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thiết bị hoặc VPN đã đóng kết nối trước khi thiết lập xong."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng giá trị mặc định %@."
           }
         }
       }
     },
-    "The file was saved, but MobileGhost could not link it. Tap Link Sync File and choose it.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The file was saved, but MobileGhost could not link it. Tap Link Sync File and choose it."
+    "Uses low-accuracy location to stay alive while simulating." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uses low-accuracy location to stay alive while simulating."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đã lưu tệp, nhưng MobileGhost chưa liên kết được. Hãy chạm Liên kết tệp đồng bộ và chọn tệp đó."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng định vị độ chính xác thấp để giữ ứng dụng chạy khi đang giả lập."
           }
         }
       }
     },
-    "The new language is applied the next time you open MobileGhost.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The new language is applied the next time you open MobileGhost."
+    "Wait (seconds)" : {
+
+    },
+    "Waiting for the Developer Disk Image (DDI) to download and mount." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for the Developer Disk Image (DDI) to download and mount."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ngôn ngữ mới sẽ được áp dụng trong lần mở MobileGhost tiếp theo."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang đợi tải và gắn Developer Disk Image (DDI)."
           }
         }
       }
     },
-    "The pairing file may be invalid or expired. You can import a new pairing file to replace it.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The pairing file may be invalid or expired. You can import a new pairing file to replace it."
+    "Waits must be 0–86,400 seconds. Departure speed must be 0 (inherit) or 1–160 km/h." : {
+
+    },
+    "Wake and unlock the target device." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wake and unlock the target device."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp ghép nối có thể không hợp lệ hoặc đã hết hạn. Bạn có thể nhập tệp ghép nối mới để thay thế."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đánh thức và mở khoá thiết bị đích."
           }
         }
       }
     },
-    "The signing certificate for this install has lapsed, so MobileGhost will not launch again until it is re-signed. Open SideStore and refresh MobileGhost to fix it.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The signing certificate for this install has lapsed, so MobileGhost will not launch again until it is re-signed. Open SideStore and refresh MobileGhost to fix it."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chứng chỉ ký của bản cài này đã hết hạn, nên MobileGhost sẽ không mở lại được cho tới khi được ký lại. Hãy mở SideStore và làm mới MobileGhost để khắc phục."
-          }
-        }
-      }
+    "Walking" : {
+
     },
-    "The sync file could not be opened. It may have been moved or deleted, or not downloaded from iCloud yet.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The sync file could not be opened. It may have been moved or deleted, or not downloaded from iCloud yet."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không mở được tệp đồng bộ. Có thể tệp đã bị di chuyển, bị xoá, hoặc chưa tải về từ iCloud."
-          }
-        }
-      }
+    "Walking paths" : {
+
     },
-    "The sync file is not a valid MobileGhost bookmarks file.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The sync file is not a valid MobileGhost bookmarks file."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tệp đồng bộ không phải tệp vị trí đã lưu hợp lệ của MobileGhost."
-          }
-        }
-      }
+    "Where to?" : {
+
     },
-    "Try Again": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Try Again"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thử lại"
-          }
-        }
-      }
+    "Your day, planned" : {
+
     },
-    "Try switching Wi-Fi off and on.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Try switching Wi-Fi off and on."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thử tắt rồi bật lại Wi-Fi."
-          }
-        }
-      }
-    },
-    "Unlink Sync File": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unlink Sync File"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bỏ liên kết tệp đồng bộ"
-          }
-        }
-      }
-    },
-    "Use the default %@.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Use the default %@."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dùng giá trị mặc định %@."
-          }
-        }
-      }
-    },
-    "Uses low-accuracy location to stay alive while simulating.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uses low-accuracy location to stay alive while simulating."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dùng định vị độ chính xác thấp để giữ ứng dụng chạy khi đang giả lập."
-          }
-        }
-      }
-    },
-    "Waiting for the Developer Disk Image (DDI) to download and mount.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waiting for the Developer Disk Image (DDI) to download and mount."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang đợi tải và gắn Developer Disk Image (DDI)."
-          }
-        }
-      }
-    },
-    "Wake and unlock the target device.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wake and unlock the target device."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đánh thức và mở khoá thiết bị đích."
-          }
-        }
-      }
-    },
-    "less than a minute": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "less than a minute"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "chưa đến một phút"
-          }
-        }
-      }
+    "YOUR LOCATION STUDIO" : {
+
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

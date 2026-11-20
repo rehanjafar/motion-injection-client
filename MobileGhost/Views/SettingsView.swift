@@ -1,6 +1,7 @@
 // Mobile Ghost additions, 2026-10-22. AGPL-3.0.
 import SwiftUI
 import UIKit
+import UserNotifications
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
@@ -8,6 +9,7 @@ struct SettingsView: View {
     @ObservedObject private var tunnel = TunnelManager.shared
     @ObservedObject private var mounting = MountingProgress.shared
     @ObservedObject private var background = BackgroundLocationManager.shared
+    @State private var notificationStatus = "Checking…"
     @State private var importing = false
     @State private var message: String?
     @State private var downloading = false
@@ -38,20 +40,38 @@ struct SettingsView: View {
                     Button("Allow background location") { background.requestAlwaysPermission() }
                     Button("Open iPhone Settings") { UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) }
                     Text("Active routes and fixed positions continue refreshing when you switch apps or lock the screen, while iOS permits background location execution. Allow location access and keep LocalDevVPN connected. A location indicator may appear and battery use increases.")
-                    Text("Force-quitting, iOS suspension, or losing the VPN can interrupt updates. After an execution gap, movement pauses instead of jumping ahead. A fixed position may persist or revert; verify it on your phone. Pending departures still require the app in the foreground.")
+                    Text("Force-quitting, iOS suspension, or losing the VPN can interrupt updates. After an execution gap, movement pauses instead of jumping ahead. A fixed position may persist or revert; verify it on your phone. Arm saved departures while in the foreground. They can then run while locked when iOS permits execution; re-arm after restarting the app.")
                     Text("A successful command is not proof of what another app displays. Check Maps after setting and restoring a location.")
                 }
+                Section("Route notifications") {
+                    LabeledContent("Permission",value:notificationStatus)
+                    Button("Enable route notifications") {
+                        Task { await RouteNotifications.shared.requestPermission(); await refreshNotificationStatus() }
+                    }
+                    Button("Open notification settings") { UIApplication.shared.open(URL(string:UIApplication.openNotificationSettingsURLString)!) }
+                    Text("Receive a notification after the phone accepts the first movement on each route, including weekly departures. Focus and iPhone notification settings control sounds and banners.").font(.caption)
+                }
                 Section("Privacy and credits") {
-                    Text("Places and the last session point are stored on this iPhone. Apple Maps receives search and route requests. Bus-stop searches send the map centre to OpenStreetMap’s Overpass service. Developer images download from the upstream GitHub source. No analytics or app account.")
+                    Text("Places and the last session point are stored on this iPhone. Apple Maps receives search and Apple route requests. The Walking map loads OpenStreetMap tiles; walking routes send stop coordinates to routing.openstreetmap.de. Bus-stop searches send the map centre to OpenStreetMap’s Overpass service. Developer images download from the upstream GitHub source. No analytics or app account.")
                     Link("OpenStreetMap contributors · ODbL",destination:URL(string:"https://www.openstreetmap.org/copyright")!)
                     Text("Based on TLocation and StikDebug by Stephen Bove and contributors; device library by Jackson Coxson. Independent Mobile Ghost modifications dated October 22, 2026. AGPL-3.0, no warranty.")
                     Link("Source, license and setup",destination:URL(string:"https://github.com/rehanjafar/mobile-ghost")!)
                 }.font(.footnote)
             }.navigationTitle("Connection").toolbar { Button("Done") { dismiss() } }
+            .task { await refreshNotificationStatus() }
             .fileImporter(isPresented:$importing,allowedContentTypes:PairingFileStore.supportedContentTypes) { result in
                 do { try PairingFileStore.importFromPicker(result.get()); markTunnelDisconnected(); startTunnelAfterPendingLocationCommands(); message = "Pairing file imported." }
                 catch { message = error.localizedDescription }
             }
+        }
+    }
+    private func refreshNotificationStatus() async {
+        let settings = await UNUserNotificationCenter.current().notificationSettings()
+        switch settings.authorizationStatus {
+        case .authorized, .provisional, .ephemeral: notificationStatus = "Allowed"
+        case .denied: notificationStatus = "Disabled in iPhone Settings"
+        case .notDetermined: notificationStatus = "Not requested"
+        @unknown default: notificationStatus = "Unknown"
         }
     }
 }

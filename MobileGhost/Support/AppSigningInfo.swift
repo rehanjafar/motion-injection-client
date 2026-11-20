@@ -8,27 +8,19 @@ import Foundation
 /// Turns provisioning-profile bytes into an expiry date, and an expiry date into
 /// the words the UI shows.
 ///
-/// MobileGhost is normally sideloaded through SideStore. With a free Apple ID the
-/// signing certificate only lasts 7 days, and once it lapses the app refuses to
-/// launch and has to be reinstalled — so the app warns before that happens.
-///
-/// This type is deliberately pure: bytes and dates in, dates and strings out. It
-/// never decides *when* to look, and never touches the device. Where the profiles
-/// come from — the `misagent` service, read through ``SigningExpiryMonitor`` — is
-/// that type's business.
-///
-/// The bundle's own `embedded.mobileprovision` is **not** read here, and must not
-/// be. That file is written at install time and is never rewritten when SideStore
-/// refreshes the app: a refresh renews the profile at the system level only
-/// (SideStore PR #846 removed the install step from refresh). Reading it reports
-/// the expiry of whichever certificate was current when the app was last
-/// *installed*, which after the first weekly refresh is always in the past — a
-/// red "expired" row and a warning card on every launch, on a perfectly healthy
-/// signature. `misagent` reports the profiles iOS actually validates against, so
-/// it moves when a refresh moves it, and it is the only source used.
+/// Device profiles track on-phone refreshes. A newly installed Xcode build may
+/// also carry a newer embedded profile; use it only to advance a cached expiry,
+/// never to replace a newer device reading with an old install-time date.
 enum AppSigningInfo {
     /// Remaining time at or below which the launch warning is shown.
     static let warningThreshold: TimeInterval = 24 * 60 * 60
+
+    static func newerInstalledExpiry(profile: Data?, bundleIdentifier: String, cached: Date?) -> Date? {
+        guard let profile,
+              let installed = expirationDate(forBundleIdentifier:bundleIdentifier,in:[profile]),
+              cached == nil || installed > cached! else { return nil }
+        return installed
+    }
 
     // MARK: - Choosing this app's profile
 

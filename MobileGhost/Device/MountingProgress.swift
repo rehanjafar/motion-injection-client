@@ -15,11 +15,25 @@ final class MountingProgress: ObservableObject {
 
     private init() {}
 
+    private var isChecking = false
     func checkforMounted() {
-        DispatchQueue.global(qos: .utility).async {
-            let mounted = isMounted()
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { self.checkforMounted() }; return
+        }
+        guard !isChecking, mountingThread == nil else { return }
+        isChecking = true
+        LocationSimulationCommandQueue.shared.async {
+            // Do not compete with an active simulation for its developer endpoint.
+            let result: MountCheckResult? = LocationSimulationSession.isOpen || LocationSimulationSession.isMaintained ? nil : checkMountStatus()
             DispatchQueue.main.async {
-                self.coolisMounted = mounted
+                if let result {
+                    switch result {
+                    case .mounted: self.coolisMounted = true
+                    case .notMounted: self.coolisMounted = false
+                    case .unreachable: break // A failed check is not proof of an unmounted image.
+                    }
+                }
+                self.isChecking = false
             }
         }
     }
@@ -36,59 +50,42 @@ final class MountingProgress: ObservableObject {
     }
 
     private func mount() {
-        let currentlyMounted = isMounted()
-        DispatchQueue.main.async {
-            self.coolisMounted = currentlyMounted
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { self.mount() }; return
         }
-
-        guard isPairing(), !currentlyMounted else {
-            // Both skips are legitimate, but only one of them means the DDI is
-            // ready — and without a line here a mount that never started looks
-            // exactly like a mount that silently failed.
-            if currentlyMounted {
-                LogManager.shared.addInfoLog("DDI mount skipped: the image is already mounted")
-            } else {
-                LogManager.shared.addWarningLog("DDI mount skipped: the pairing file could not be read")
-            }
-            return
-        }
-
-        if let mountingThread {
-            mountingThread.cancel()
-            self.mountingThread = nil
-        }
-
+        guard mountingThread == nil else { return }
         let thread = Thread { [weak self] in
             guard let self else { return }
-            LogManager.shared.addInfoLog("DDI mount started")
-            let mountError = mountPersonalDDI(
-                imagePath: URL.documentsDirectory.appendingPathComponent("DDI/Image.dmg").path,
-                trustcachePath: URL.documentsDirectory.appendingPathComponent("DDI/Image.dmg.trustcache").path,
-                manifestPath: URL.documentsDirectory.appendingPathComponent("DDI/BuildManifest.plist").path
-            )
-
+            // These calls can wait on the developer connection. Never run them
+            // on the UI thread, where they would block map gestures.
+            let currentlyMounted = isMounted()
+            var mountError: String?
+            var mounted = currentlyMounted
+            if !currentlyMounted {
+                if isPairing() {
+                    mountError = mountPersonalDDI(
+                        imagePath: URL.documentsDirectory.appendingPathComponent("DDI/Image.dmg").path,
+                        trustcachePath: URL.documentsDirectory.appendingPathComponent("DDI/Image.dmg.trustcache").path,
+                        manifestPath: URL.documentsDirectory.appendingPathComponent("DDI/BuildManifest.plist").path)
+                    mounted = mountError == nil
+                } else { mountError = "Import a valid pairing file before preparing the developer image." }
+            }
             DispatchQueue.main.async {
-                if let mountError {
-                    showAlert(title: String(localized: "DDI Mount Failed"), message: mountError, showOk: true, showTryAgain: true) { shouldTryAgain in
-                        if shouldTryAgain {
-                            self.mount()
-                        }
-                    }
-                } else {
-                    // The failure path is already logged by `mountPersonalDDI`.
-                    LogManager.shared.addInfoLog("DDI mounted successfully")
-                    self.coolisMounted = true
-                    self.checkforMounted()
-                }
+                self.coolisMounted = mounted
                 self.mountingThread = nil
+                if let mountError {
+                    showAlert(title:String(localized:"DDI Mount Failed"),message:mountError,showOk:true,showTryAgain:true) { retry in
+                        if retry { self.mount() }
+                    }
+                }
             }
         }
-
-        thread.qualityOfService = .background
+        thread.qualityOfService = .utility
         thread.name = "mounting"
-        thread.start()
         mountingThread = thread
+        thread.start()
     }
+
 }
 
 func isPairing() -> Bool {

@@ -89,3 +89,124 @@ enum BackgroundExecutionPolicy {
         !elapsed.isFinite || elapsed < 0 || elapsed > 3
     }
 }
+
+
+struct ScheduledJourney: Codable, Identifiable {
+    var id = UUID()
+    var name: String
+    var plan: JourneyPlan
+    var departure: Date
+    var speed: Double
+    var state = "Pending"
+    var weeklyRepeat: WeeklyRepeat?
+    var lastOutcome: String?
+    var windowStart: Date?
+    var windowSeconds: TimeInterval?
+    var earliestDeparture: Date { windowStart ?? departure }
+    var latestDeparture: Date { earliestDeparture.addingTimeInterval(windowSeconds ?? 0) }
+    var reservedDuration: TimeInterval { duration + (windowSeconds ?? 0) }
+    mutating func chooseDeparture(unit: Double = Double.random(in:0...1)) {
+        guard let windowStart, let windowSeconds else { return }
+        departure = windowStart.addingTimeInterval(windowSeconds * min(1,max(0,unit)))
+    }
+    var duration: TimeInterval {
+        var currentSpeed = speed
+        return plan.legs.enumerated().reduce(0) { total, item in
+            let stop = plan.stops[item.offset]
+            if stop.departureSpeed > 0 { currentSpeed = stop.departureSpeed }
+            return total + stop.waitSeconds + item.element.distance / (currentSpeed / 3.6)
+        }
+    }
+    var arrival: Date { departure.addingTimeInterval(duration) }
+    func overlaps(_ other: Self) -> Bool {
+        if weeklyRepeat == nil && other.weeklyRepeat == nil {
+            return earliestDeparture < other.latestDeparture.addingTimeInterval(other.duration) && other.earliestDeparture < latestDeparture.addingTimeInterval(duration)
+        }
+        // Include a full seasonal cycle for differing time zones / DST.
+        let end = max(departure,other.departure).addingTimeInterval(370*86400)
+        let left = occurrences(until:end), right = other.occurrences(until:end)
+        let leftDuration = reservedDuration, rightDuration = other.reservedDuration
+        var i = 0, j = 0
+        while i < left.count && j < right.count {
+            if left[i] < right[j].addingTimeInterval(rightDuration) && right[j] < left[i].addingTimeInterval(leftDuration) { return true }
+            if left[i].addingTimeInterval(leftDuration) <= right[j] { i += 1 } else { j += 1 }
+        }
+        return false
+    }
+    private func occurrences(until end: Date) -> [Date] {
+        var dates = [earliestDeparture]
+        while let rule = weeklyRepeat, let next = rule.next(after:dates.last!), next <= end, dates.count < 800 {
+            dates.append(next)
+        }
+        return dates
+    }
+    var overlapsOwnRepeat: Bool {
+        guard weeklyRepeat != nil else { return false }
+        let dates = occurrences(until:departure.addingTimeInterval(370*86400))
+        let travelTime = reservedDuration
+        return zip(dates,dates.dropFirst()).contains { $0.addingTimeInterval(travelTime) > $1 }
+    }
+    mutating func finishOccurrence(_ outcome: String, now: Date) {
+        lastOutcome = outcome
+        if let next = weeklyRepeat?.next(after:max(now,earliestDeparture)) {
+            departure = next
+            if windowSeconds != nil { windowStart = next; chooseDeparture() }
+            state = "Pending"
+        } else { state = outcome }
+    }
+    var isValid: Bool { plan.isValid && (1...160).contains(speed) && departure.timeIntervalSince1970.isFinite && (weeklyRepeat == nil || weeklyRepeat!.isValid) && validWindow }
+    var validWindow: Bool {
+        if windowStart == nil && windowSeconds == nil { return true }
+        guard let windowStart, let windowSeconds, windowStart.timeIntervalSince1970.isFinite,
+              windowSeconds.isFinite, (1...86400).contains(windowSeconds) else { return false }
+        return departure >= windowStart && departure <= latestDeparture
+    }
+}
+
+
+enum DepartureDecision: Equatable { case wait, start, missed }
+enum DeparturePolicy {
+    static func decision(departure: Date, now: Date, armed: Bool, occupied: Bool, connected: Bool, latestDeparture: Date? = nil) -> DepartureDecision {
+        let delay = now.timeIntervalSince(departure)
+        guard delay >= 0 else { return .wait }
+        if delay > 60 || (latestDeparture.map { now > $0 } ?? false) { return .missed }
+        return armed && !occupied && connected ? .start : .wait
+    }
+}
+
+/// Calendar weekdays: Sunday = 1 ... Saturday = 7. The saved zone keeps
+/// a departure at the chosen local time even if the phone later travels.
+struct WeeklyRepeat: Codable, Equatable {
+    var weekdays: Set<Int>
+    var hour: Int
+    var minute: Int
+    var timeZoneID: String
+    var isValid: Bool {
+        !weekdays.isEmpty && weekdays.allSatisfy { (1...7).contains($0) } &&
+        (0...23).contains(hour) && (0...59).contains(minute) && TimeZone(identifier:timeZoneID) != nil
+    }
+    func next(after date: Date) -> Date? {
+        guard isValid else { return nil }
+        var calendar = Calendar(identifier:.gregorian)
+        calendar.timeZone = TimeZone(identifier:timeZoneID)!
+        return weekdays.compactMap { day in
+            calendar.nextDate(after:date,matching:DateComponents(hour:hour,minute:minute,second:0,weekday:day),
+                matchingPolicy:.nextTime,repeatedTimePolicy:.first,direction:.forward)
+        }.min()
+    }
+    var summary: String {
+        let names = [2:"Mon",3:"Tue",4:"Wed",5:"Thu",6:"Fri",7:"Sat",1:"Sun"]
+        return [2,3,4,5,6,7,1].filter { weekdays.contains($0) }.compactMap { names[$0] }.joined(separator:", ")
+    }
+}
+
+/// One notification per route, after acknowledged movement (not its initial
+/// jump to the starting pin, waiting at a stop, or a failed device command).
+struct RouteMovementNotice {
+    var name: String?
+    mutating func take(from: GeoPoint, to: GeoPoint, acknowledged: Bool) -> String? {
+        guard acknowledged, from != to, let name else { return nil }
+        self.name = nil
+        return name
+    }
+}

@@ -446,7 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4FQD3BYKV8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -456,7 +456,7 @@
 					"$(PROJECT_DIR)/MobileGhost/idevice",
 				);
 				INFOPLIST_FILE = MobileGhost/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Mobile Ghost";
+				INFOPLIST_KEY_CFBundleDisplayName = MobileGhost;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "MobileGhost needs access to devices on your local network to connect to this device and simulate its location.";
@@ -481,7 +481,7 @@
 					"$(PROJECT_DIR)/MobileGhost/idevice",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rehanjafar.mobileghost;
 				PRODUCT_NAME = MobileGhost;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -510,7 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4FQD3BYKV8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -520,7 +520,7 @@
 					"$(PROJECT_DIR)/MobileGhost/idevice",
 				);
 				INFOPLIST_FILE = MobileGhost/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Mobile Ghost";
+				INFOPLIST_KEY_CFBundleDisplayName = MobileGhost;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "MobileGhost needs access to devices on your local network to connect to this device and simulate its location.";
@@ -545,7 +545,7 @@
 					"$(PROJECT_DIR)/MobileGhost/idevice",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rehanjafar.mobileghost;
 				PRODUCT_NAME = MobileGhost;
 				PROVISIONING_PROFILE_SPECIFIER = "";

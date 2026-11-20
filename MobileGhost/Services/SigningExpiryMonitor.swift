@@ -54,6 +54,11 @@ final class SigningExpiryMonitor: ObservableObject {
 
     private init() {
         reading = Self.persistedReading()
+        let profile = Bundle.main.url(forResource:"embedded",withExtension:"mobileprovision").flatMap { try? Data(contentsOf:$0) }
+        if let expiry = AppSigningInfo.newerInstalledExpiry(profile:profile,
+            bundleIdentifier:Bundle.main.bundleIdentifier ?? "",cached:reading?.expirationDate) {
+            store(Reading(expirationDate:expiry,checkedAt:Date()))
+        }
     }
 
     /// True when there is a reading *and* it is recent enough to act on. The
