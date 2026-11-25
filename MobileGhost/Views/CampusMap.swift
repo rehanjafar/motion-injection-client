@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import CoreImage
 
 /// Same OpenStreetMap Carto tiles as Ghost Transit. Only visible tiles are
 /// requested; URLSession honours HTTP cache headers and keeps a disk cache.
@@ -38,6 +39,27 @@ final class WalkingMapTiles: MKTileOverlay {
         queue.qualityOfService = .userInitiated
         return queue
     }()
+    private static let imageContext = CIContext(options:[.cacheIntermediates:false])
+    private static let styledTiles: NSCache<NSURL, UIImage> = {
+        let cache = NSCache<NSURL, UIImage>()
+        cache.totalCostLimit = 12*1024*1024
+        return cache
+    }()
+    private static func darkTile(_ data: Data, url: URL) -> CGImage? {
+        if let cached = styledTiles.object(forKey:url as NSURL)?.cgImage { return cached }
+        guard let image = CIImage(data:data) else { return nil }
+        // Invert tile luminance into the reference's deep green palette.
+        // Geometry and labels remain the provider's original map content.
+        let tinted = image.applyingFilter("CIColorMatrix",parameters:[
+            "inputRVector":CIVector(x:-0.2126*0.018,y:-0.7152*0.018,z:-0.0722*0.018,w:0),
+            "inputGVector":CIVector(x:-0.2126*0.045,y:-0.7152*0.045,z:-0.0722*0.045,w:0),
+            "inputBVector":CIVector(x:-0.2126*0.035,y:-0.7152*0.035,z:-0.0722*0.035,w:0),
+            "inputBiasVector":CIVector(x:0.020,y:0.050,z:0.039,w:0)
+        ])
+        guard let result = imageContext.createCGImage(tinted,from:image.extent) else { return nil }
+        styledTiles.setObject(UIImage(cgImage:result),forKey:url as NSURL,cost:result.bytesPerRow*result.height)
+        return result
+    }
     var onFailure: (() -> Void)?
     init(onFailure: @escaping () -> Void) {
         super.init(urlTemplate:"https://tile.openstreetmap.org/{z}/{x}/{y}.png")
@@ -57,8 +79,7 @@ final class WalkingMapTiles: MKTileOverlay {
         Self.load(request) { [weak self] data,response,error in
             if error == nil, let response = response as? HTTPURLResponse, response.statusCode == 200,
                response.mimeType == "image/png", let data, !data.isEmpty {
-                if extraZoom == 0 { result(data,nil); return }
-                guard let image = UIImage(data:data)?.cgImage else {
+                guard let image = Self.darkTile(data,url:request.url!) else {
                     result(nil,URLError(.cannotDecodeContentData)); return
                 }
                 let size = CGFloat(image.width) / CGFloat(factor)
@@ -101,6 +122,8 @@ struct CampusMap: UIViewRepresentable {
         let map = MKMapView()
         map.delegate = context.coordinator
         map.showsUserLocation = false
+        map.overrideUserInterfaceStyle = .dark
+        map.backgroundColor = UIColor(GhostPalette.background)
         map.isScrollEnabled = true; map.isZoomEnabled = true; map.isRotateEnabled = true
         map.cameraZoomRange = MKMapView.CameraZoomRange(minCenterCoordinateDistance:45,maxCenterCoordinateDistance:40_000_000)
         map.showsCompass = true; map.showsScale = true
@@ -127,6 +150,7 @@ struct CampusMap: UIViewRepresentable {
     final class Pin: MKPointAnnotation {
         var kind = "stop"
         var busStop: JourneyStop?
+        var number: Int?
     }
     final class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate {
         var parent: CampusMap
@@ -171,12 +195,12 @@ struct CampusMap: UIViewRepresentable {
             if selected != parent.selected || simulated != parent.simulated || stops != parent.stops || buses != parent.busStops {
                 selected = parent.selected; simulated = parent.simulated; stops = parent.stops; buses = parent.busStops
                 map.removeAnnotations(pins); pins = []
-                func add(_ point: GeoPoint, _ title: String, _ kind: String, bus: JourneyStop? = nil) {
-                    let pin = Pin(); pin.coordinate = point.coordinate; pin.title = title; pin.kind = kind; pin.busStop = bus; pins.append(pin)
+                func add(_ point: GeoPoint, _ title: String, _ kind: String, number: Int? = nil, bus: JourneyStop? = nil) {
+                    let pin = Pin(); pin.coordinate = point.coordinate; pin.title = title; pin.kind = kind; pin.number = number; pin.busStop = bus; pins.append(pin)
                 }
                 if let selected { add(selected,"Selected location","selected") }
                 if let simulated { add(simulated,"Simulated location","simulated") }
-                for (index,stop) in stops.enumerated() { add(stop.point,"\(index+1). \(stop.name)","stop") }
+                for (index,stop) in stops.enumerated() { add(stop.point,"\(index+1). \(stop.name)","stop",number:index+1) }
                 for stop in buses { add(stop.point,stop.name,"bus",bus:stop) }
                 map.addAnnotations(pins)
             }
@@ -216,7 +240,7 @@ struct CampusMap: UIViewRepresentable {
             if let tile = overlay as? MKTileOverlay { return MKTileOverlayRenderer(tileOverlay:tile) }
             if let line = overlay as? MKPolyline {
                 let renderer = MKPolylineRenderer(polyline:line)
-                renderer.strokeColor = .systemIndigo; renderer.lineWidth = 6; renderer.lineCap = .round; renderer.lineJoin = .round
+                renderer.strokeColor = UIColor(GhostPalette.accent); renderer.lineWidth = 6; renderer.lineCap = .round; renderer.lineJoin = .round
                 return renderer
             }
             return MKOverlayRenderer(overlay:overlay)
@@ -225,8 +249,13 @@ struct CampusMap: UIViewRepresentable {
             guard let pin = annotation as? Pin else { return nil }
             let view = (mapView.dequeueReusableAnnotationView(withIdentifier:"ghostPin") as? MKMarkerAnnotationView) ?? MKMarkerAnnotationView(annotation:pin,reuseIdentifier:"ghostPin")
             view.annotation = pin; view.canShowCallout = true
-            view.markerTintColor = pin.kind == "simulated" ? .systemMint : pin.kind == "bus" ? .systemBlue : .systemIndigo
-            view.glyphImage = UIImage(systemName:pin.kind == "bus" ? "bus.fill" : pin.kind == "simulated" ? "location.fill" : "mappin")
+            view.markerTintColor = pin.number == 1 || pin.kind == "selected"
+                ? UIColor(red:0.88,green:0.43,blue:0.30,alpha:1)
+                : UIColor(red:0.13,green:0.43,blue:0.37,alpha:1)
+            view.glyphTintColor = .white
+            view.glyphText = pin.number.map(String.init)
+            view.glyphImage = pin.number == nil ? UIImage(systemName:pin.kind == "bus" ? "bus.fill" : pin.kind == "simulated" ? "location.fill" : "mappin") : nil
+            view.displayPriority = pin.number == nil ? .defaultHigh : .required
             return view
         }
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

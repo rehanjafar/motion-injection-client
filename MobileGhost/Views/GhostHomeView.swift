@@ -22,6 +22,9 @@ struct GhostHomeView: View {
     @State private var mode = "Walking"
     @State private var plan: JourneyPlan?
     @State private var working = false
+    @State private var searchVisible = false
+    @State private var panelExpanded = true
+    @FocusState private var searchFocused: Bool
     @State private var showSettings = false
     @State private var showLibrary = false
     @State private var showRoute = false
@@ -43,46 +46,46 @@ struct GhostHomeView: View {
     @State private var nextTransitQuery = Date.distantPast
 
     var body: some View {
-        VStack(spacing:0) {
-            header.padding(.horizontal,12).padding(.top,8)
-            searchBar.padding(.horizontal,12).padding(.vertical,8)
-            CampusMap(region:camera.region, cameraRevision:cameraRevision, style:mapStyle, reload:tileReload,
-                selected:selected, simulated:session.current, stops:stops, busStops:nearby, legs:plan?.legs ?? [],
-                onTap: { point in awaitingOpeningLocation = false; locationHint = nil; selected = point; query = ""; results = [] },
-                onBusStop: { stop in select(stop.point); query = stop.name },
-                onRegion: { region, movedByUser in
-                    centre = GeoPoint(region.center)
-                    if movedByUser { awaitingOpeningLocation = false; locationHint = nil; openingLocation.cancel() }
-                }, onTileFailure: { tileFailed = true })
-                .frame(minHeight:220,maxHeight:.infinity).clipped()
-            VStack(spacing:5) {
-                HStack {
-                    Picker("Map",selection:$mapStyle) {
-                        Text("Walking").tag("Walking")
-                        Text("Apple").tag("Apple")
-                        Text("Satellite").tag("Satellite")
-                    }.pickerStyle(.segmented)
-                    if working { ProgressView() }
-                }
-                HStack {
-                    if mapStyle == "Walking" {
-                        Link("© OpenStreetMap contributors",destination:URL(string:"https://www.openstreetmap.org/copyright")!)
+        GeometryReader { geometry in
+            let panelHeight = min(geometry.size.height * 0.70,max(210,geometry.size.height * (panelExpanded ? 0.47 : 0.29)))
+            VStack(spacing:0) {
+                ZStack(alignment:.bottomTrailing) {
+                    journeyMap
+                    VStack {
+                        if searchVisible {
+                            searchBar
+                                .padding(14)
+                                .background(GhostPalette.panel.opacity(0.98),in:RoundedRectangle(cornerRadius:22))
+                                .overlay(RoundedRectangle(cornerRadius:22).stroke(GhostPalette.border))
+                                .padding(.horizontal,16).padding(.top,64)
+                        }
                         Spacer()
-                        Link("Report missing path",destination:URL(string:"https://www.openstreetmap.org/fixthemap")!)
+                        HStack(alignment:.bottom) {
+                            if mapStyle == "Walking" {
+                                Link("© OpenStreetMap contributors",destination:URL(string:"https://www.openstreetmap.org/copyright")!)
+                                    .font(.system(size:10)).padding(.horizontal,9).padding(.vertical,6)
+                                    .background(GhostPalette.background.opacity(0.92),in:Capsule())
+                            }
+                            Spacer()
+                            Button {
+                                searchVisible.toggle(); searchFocused = searchVisible
+                            } label: {
+                                Image(systemName:searchVisible ? "xmark" : "magnifyingglass")
+                                    .font(.system(size:21,weight:.medium)).frame(width:54,height:54)
+                                    .background(GhostPalette.panel.opacity(0.96),in:RoundedRectangle(cornerRadius:18))
+                                    .overlay(RoundedRectangle(cornerRadius:18).stroke(GhostPalette.border,lineWidth:1.5))
+                            }.accessibilityLabel(searchVisible ? "Close search" : "Search places")
+                        }.padding(16)
                     }
-                }.font(.system(size:10))
-                if tileFailed && mapStyle == "Walking" {
-                    HStack {
-                        Text("Some map tiles failed to load.").font(.caption)
-                        Button("Retry") { tileFailed = false; tileReload += 1 }.font(.caption.bold())
-                    }
-                }
-            }.padding(.horizontal,12).padding(.vertical,6)
-            controlPanel
+                }.frame(maxWidth:.infinity,maxHeight:.infinity).clipped()
+                controlPanel.frame(height:panelHeight)
+            }
+            .background(GhostPalette.background)
         }
-        .background(Color(uiColor:.systemGroupedBackground))
+        .background(GhostPalette.background.ignoresSafeArea())
         .toolbar(.hidden,for:.navigationBar)
-        .tint(.indigo)
+        .preferredColorScheme(.dark)
+        .tint(GhostPalette.accent)
         .sheet(isPresented:$showSettings) { SettingsView() }
         .sheet(isPresented:$showSchedules) { scheduleList }
         .sheet(isPresented:$showRoute) { routeEditor }
@@ -98,6 +101,20 @@ struct GhostHomeView: View {
             else if value == .background { needsOpeningCenter = true; awaitingOpeningLocation = false; openingLocation.cancel() }
         }
 
+    }
+    private var journeyMap: some View {
+        CampusMap(region:camera.region, cameraRevision:cameraRevision, style:mapStyle, reload:tileReload,
+            selected:selected, simulated:session.current, stops:stops, busStops:nearby, legs:plan?.legs ?? [],
+            onTap: { point in
+                awaitingOpeningLocation = false; openingLocation.cancel(); locationHint = nil
+                selected = point; query = ""; results = []; searchVisible = false; searchFocused = false
+            },
+            onBusStop: { stop in select(stop.point); query = stop.name },
+            onRegion: { region, movedByUser in
+                centre = GeoPoint(region.center)
+                if movedByUser { awaitingOpeningLocation = false; locationHint = nil; openingLocation.cancel(); searchFocused = false }
+            }, onTileFailure: { tileFailed = true })
+            .ignoresSafeArea(edges:.top)
     }
     /// One location request per opening; only moves the camera. It does not
     /// add a location marker, start tracking, or change simulation state.
@@ -125,11 +142,11 @@ struct GhostHomeView: View {
             if let locationHint { Text(locationHint).font(.caption).foregroundStyle(.secondary).frame(maxWidth:.infinity,alignment:.leading) }
             HStack {
                 Image(systemName:"magnifyingglass")
-                TextField("Search place or coordinates",text:$query).submitLabel(.search)
+                TextField("Search place or coordinates",text:$query).focused($searchFocused).submitLabel(.search)
                     .onSubmit { Task { await search() } }
                 Button { Task { await search() } } label: { Image(systemName:"arrow.right.circle.fill") }
                     .disabled(working || query.isEmpty).accessibilityLabel("Search")
-            }.padding(12).background(.regularMaterial,in:RoundedRectangle(cornerRadius:16))
+            }.padding(12).background(GhostPalette.background,in:RoundedRectangle(cornerRadius:14))
             if !results.isEmpty {
                 ScrollView {
                     VStack(alignment:.leading,spacing:0) {
@@ -143,62 +160,108 @@ struct GhostHomeView: View {
             }
         }
     }
-    private var header: some View {
-        HStack(spacing:12) {
-            Image(systemName:"location.north.circle.fill").font(.largeTitle).foregroundStyle(.indigo)
-            VStack(alignment:.leading,spacing:2) {
-                Text("Ghost").font(.title2.bold())
-                Text("YOUR LOCATION STUDIO").font(.system(size:9,weight:.semibold,design:.rounded)).tracking(2).foregroundStyle(.secondary)
-            }
-            Spacer()
-            Button { showLibrary = true } label: { Image(systemName:"bookmark").frame(width:40,height:40).background(.quaternary,in:Circle()) }.accessibilityLabel("Saved places")
-            Button { showSettings = true } label: { Image(systemName:"slider.horizontal.3").frame(width:40,height:40).background(.quaternary,in:Circle()) }.accessibilityLabel("Connection settings")
-        }.padding(12).background(.regularMaterial,in:RoundedRectangle(cornerRadius:24))
-    }
     private var controlPanel: some View {
-        ScrollView { VStack(spacing:14) {
-            Capsule().fill(.quaternary).frame(width:36,height:4).padding(.top,8)
-            HStack(alignment:.top,spacing:10) {
-                Image(systemName:session.running ? "location.fill" : "location.circle").font(.title2).foregroundStyle(.indigo)
-                VStack(alignment:.leading,spacing:4) {
-                    Text(session.running ? "On the move" : selected != nil ? "Selected location" : "Where to?").font(.headline)
-                    Text(session.status).font(.caption).foregroundStyle(.secondary).lineLimit(2)
-                }
-                Spacer()
-                if session.busy { ProgressView() }
+        VStack(spacing:0) {
+            VStack(spacing:14) {
+                Capsule().fill(GhostPalette.accent.opacity(0.45)).frame(width:42,height:4)
+                    .frame(maxWidth:.infinity,minHeight:28)
+                Rectangle().fill(GhostPalette.border).frame(height:1)
             }
-            if let p = selected {
-                HStack {
-                    VStack(alignment:.leading,spacing:3) {
-                        Text(query.isEmpty ? "Dropped pin" : query).font(.subheadline.weight(.semibold)).lineLimit(1)
-                        Text(String(format:"%.5f, %.5f",p.latitude,p.longitude)).font(.caption.monospaced()).foregroundStyle(.secondary)
+            .padding(.horizontal,18)
+            .contentShape(Rectangle())
+            .onTapGesture { panelExpanded.toggle() }
+            .gesture(DragGesture(minimumDistance:15).onEnded { value in
+                if value.translation.height < -15 { panelExpanded = true }
+                else if value.translation.height > 15 { panelExpanded = false }
+            })
+            .accessibilityElement(children:.ignore)
+            .accessibilityLabel(panelExpanded ? "Collapse route panel" : "Expand route panel")
+            .accessibilityAddTraits(.isButton)
+            .accessibilityAction { panelExpanded.toggle() }
+            ScrollView {
+                VStack(alignment:.leading,spacing:18) {
+                    HStack(alignment:.top) {
+                        VStack(alignment:.leading,spacing:5) {
+                            Text(session.running ? "On the move" : selected != nil ? "Selected location" : "Your next journey")
+                                .font(.system(size:22,weight:.semibold))
+                            Text(session.status).font(.caption).foregroundStyle(GhostPalette.secondary)
+                        }
+                        Spacer(minLength:8)
+                        Menu {
+                            Picker("Map style",selection:$mapStyle) {
+                                Text("Walking").tag("Walking"); Text("Apple").tag("Apple"); Text("Satellite").tag("Satellite")
+                            }
+                            Button("Find nearby transit stops") { Task { await findBusStops() } }
+                            Link("Report a missing path",destination:URL(string:"https://www.openstreetmap.org/fixthemap")!)
+                        } label: {
+                            Label(mapStyle,systemImage:"chevron.down").font(.caption.weight(.medium))
+                                .padding(10).background(GhostPalette.card,in:Capsule())
+                        }.accessibilityLabel("Map style and transit")
                     }
-                    Spacer()
-                    Button { saved.append(JourneyStop(name:query.isEmpty ? "Saved place \(saved.count+1)" : query,point:p)); persistPlaces() } label: { Image(systemName:"bookmark") }.accessibilityLabel("Save selected place")
-                }
-                HStack(spacing:10) {
-                    Button { Task { await session.setLocation(p) } } label: { Label("Set location",systemImage:"location.fill").frame(maxWidth:.infinity).padding(.vertical,5) }.buttonStyle(.borderedProminent).disabled(session.busy)
-                    Button { if stops.count < 12 { stops.append(JourneyStop(name:query.isEmpty ? "Stop \(stops.count+1)" : query,point:p)); plan = nil } } label: { Label("Add stop",systemImage:"plus").padding(.vertical,5) }.buttonStyle(.bordered).disabled(stops.count >= 12 || working)
-                }
-            } else { Text("Search a place or tap anywhere on the map.").font(.subheadline).foregroundStyle(.secondary).frame(maxWidth:.infinity,alignment:.leading) }
-            if session.needsRestore {
-                HStack {
-                    if session.running { Button { session.pause() } label: { Image(systemName:"pause.fill") }.accessibilityLabel("Pause route") }
-                    if session.canResume { Button { session.resume() } label: { Image(systemName:"play.fill") }.disabled(session.busy).accessibilityLabel("Resume route") }
-                    Text("\(Int(speed)) km/h").font(.caption.monospacedDigit())
-                    Slider(value:$speed,in:1...160,step:1,onEditingChanged: { editing in if !editing { session.applySpeed(speed) } }).disabled(session.busy)
-                    Button("Restore") { Task { await session.restore() } }.font(.subheadline.weight(.semibold)).disabled(session.busy)
-                }
+                    if let locationHint { Text(locationHint).font(.caption).foregroundStyle(GhostPalette.secondary) }
+                    if tileFailed && mapStyle == "Walking" {
+                        HStack {
+                            Text("Some walking tiles could not load.").font(.caption)
+                            Button("Retry") { tileFailed = false; tileReload += 1 }
+                        }
+                    }
+                    if let p = selected {
+                        HStack {
+                            VStack(alignment:.leading,spacing:5) {
+                                Text(query.isEmpty ? "Dropped pin" : query).font(.headline).lineLimit(2)
+                                Text(String(format:"%.5f, %.5f",p.latitude,p.longitude)).font(.caption.monospaced()).foregroundStyle(GhostPalette.secondary)
+                            }
+                            Spacer()
+                            Button { saved.append(JourneyStop(name:query.isEmpty ? "Saved place \(saved.count+1)" : query,point:p)); persistPlaces() } label: {
+                                Image(systemName:"bookmark").frame(width:44,height:44)
+                            }.accessibilityLabel("Save selected place")
+                        }
+                        HStack(spacing:12) {
+                            Button { Task { await session.setLocation(p) } } label: {
+                                Label("Set location",systemImage:"location.fill").frame(maxWidth:.infinity).padding(.vertical,8)
+                            }.buttonStyle(.borderedProminent).disabled(session.busy)
+                            Button {
+                                if stops.count < 12 { stops.append(JourneyStop(name:query.isEmpty ? "Stop \(stops.count+1)" : query,point:p)); plan = nil }
+                            } label: {
+                                Label("Add stop",systemImage:"plus").frame(maxWidth:.infinity).padding(.vertical,8)
+                            }.buttonStyle(.bordered).disabled(stops.count >= 12 || working)
+                        }
+                    } else if !session.needsRestore {
+                        Text("Tap the map to place a pin, or search for a place.")
+                            .font(.subheadline).foregroundStyle(GhostPalette.secondary)
+                    }
+                    if session.needsRestore {
+                        HStack {
+                            if session.running { Button { session.pause() } label: { Image(systemName:"pause.fill").frame(width:44,height:44) }.accessibilityLabel("Pause route") }
+                            if session.canResume { Button { session.resume() } label: { Image(systemName:"play.fill").frame(width:44,height:44) }.disabled(session.busy).accessibilityLabel("Resume route") }
+                            Text("\(Int(speed)) km/h").font(.caption.monospacedDigit())
+                            Spacer()
+                            Button("Restore") { Task { await session.restore() } }.disabled(session.busy)
+                        }
+                        Slider(value:$speed,in:1...160,step:1,onEditingChanged: { editing in if !editing { session.applySpeed(speed) } })
+                            .disabled(session.busy).accessibilityLabel("Movement speed")
+                    }
+                    if !stops.isEmpty {
+                        Button { showRoute = true } label: {
+                            HStack {
+                                Image(systemName:"point.topleft.down.to.point.bottomright.curvepath")
+                                Text("\(stops.count) route stops"); Spacer(); Text("Plan route"); Image(systemName:"arrow.right")
+                            }.font(.subheadline).padding(14).background(GhostPalette.card,in:RoundedRectangle(cornerRadius:16))
+                        }.buttonStyle(.plain)
+                    }
+                    if working || session.busy { ProgressView().frame(maxWidth:.infinity) }
+                }.padding(20)
             }
-            Divider()
             HStack(spacing:0) {
                 dockButton("Route",detail:"\(stops.count) stops",icon:"point.topleft.down.to.point.bottomright.curvepath") { showRoute = true }
-                dockButton("Schedules",detail:session.schedulesArmed ? "Armed · \(session.pendingCount)" : "\(session.pendingCount) upcoming",icon:"calendar.badge.clock") { showSchedules = true }
-                dockButton("Transit",detail:"Nearby stops",icon:"bus") { Task { await findBusStops() } }
-            }
-        }.padding(.horizontal,20).padding(.bottom,12)
-        }.frame(height:selected == nil ? (session.needsRestore ? 270 : 225) : (session.needsRestore ? 340 : 285))
-        .background(.regularMaterial,in:UnevenRoundedRectangle(topLeadingRadius:28,topTrailingRadius:28))
+                dockButton("Schedules",detail:session.schedulesArmed ? "Armed" : "\(session.pendingCount) upcoming",icon:"calendar") { showSchedules = true }
+                dockButton("Saved",detail:"Places",icon:"bookmark") { showLibrary = true }
+                dockButton("Settings",detail:"Connection",icon:"slider.horizontal.3") { showSettings = true }
+            }.padding(.vertical,14)
+                .background(GhostPalette.background.opacity(0.35))
+        }
+        .background(GhostPalette.panel,in:UnevenRoundedRectangle(topLeadingRadius:28,topTrailingRadius:28))
+        .overlay(UnevenRoundedRectangle(topLeadingRadius:28,topTrailingRadius:28).strokeBorder(GhostPalette.border,lineWidth:1))
     }
     private func dockButton(_ title: String, detail: String, icon: String, action: @escaping () -> Void) -> some View {
         Button(action:action) {
@@ -207,7 +270,7 @@ struct GhostHomeView: View {
                 Text(title).font(.caption.weight(.semibold))
                 Text(detail).font(.system(size:10)).foregroundStyle(.secondary)
             }.frame(maxWidth:.infinity)
-        }.buttonStyle(.plain).foregroundStyle(.indigo)
+        }.buttonStyle(.plain).foregroundStyle(GhostPalette.accent)
     }
     private var scheduleList: some View {
         NavigationStack {
@@ -330,7 +393,7 @@ struct GhostHomeView: View {
             List {
                 Section("Saved places") { ForEach(saved) { place in Button(place.name) { select(place.point); query = place.name; showLibrary = false } }.onDelete { saved.remove(atOffsets:$0); persistPlaces() } }
                 Section("About") {
-                    Text("Mobile Ghost 0.5.0 · iPhone location simulation")
+                    Text("Mobile Ghost 0.6.0 · iPhone location simulation")
                     Text("Independent derivative of TLocation and StikDebug. © Stephen Bove and contributors. Modified October 22, 2026. AGPL-3.0; no warranty.").font(.caption)
                     Link("Source code and license",destination:URL(string:"https://github.com/rehanjafar/mobile-ghost")!)
                 }

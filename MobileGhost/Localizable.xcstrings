@@ -204,6 +204,9 @@
         }
       }
     },
+    "%lld route stops" : {
+
+    },
     "%lld saved locations" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -263,6 +266,9 @@
           }
         }
       }
+    },
+    "A start time is picked once for each occurrence and saved. The route will not start after this window ends. Any waits at the first stop still apply." : {
+
     },
     "A successful command is not proof of what another app displays. Check Maps after setting and restoring a location." : {
 
@@ -444,6 +450,26 @@
     "Based on TLocation and StikDebug by Stephen Bove and contributors; device library by Jackson Coxson. Independent Mobile Ghost modifications dated October 22, 2026. AGPL-3.0, no warranty." : {
 
     },
+    "Between %@ and %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Between %1$@ and %2$@"
+          }
+        }
+      }
+    },
+    "Between %@ and %@. A new time is picked for each repeat. Any waits at the first stop still apply." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Between %1$@ and %2$@. A new time is picked for each repeat. Any waits at the first stop still apply."
+          }
+        }
+      }
+    },
     "Bookmark Sync File" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -553,6 +579,9 @@
           }
         }
       }
+    },
+    "Chosen start shown above" : {
+
     },
     "Clear Failed" : {
       "extractionState" : "stale",
@@ -689,6 +718,12 @@
         }
       }
     },
+    "Close search" : {
+
+    },
+    "Collapse route panel" : {
+
+    },
     "Confirm iOS shows the VPN indicator." : {
       "localizations" : {
         "en" : {
@@ -807,9 +842,6 @@
           }
         }
       }
-    },
-    "Connection settings" : {
-
     },
     "Coordinates copied" : {
       "extractionState" : "stale",
@@ -1170,6 +1202,12 @@
     "During a journey" : {
 
     },
+    "Edit" : {
+
+    },
+    "Edit schedule" : {
+
+    },
     "Enable Developer Mode, import this iPhone’s pairing file, and connect LocalDevVPN while joined to Wi-Fi." : {
 
     },
@@ -1229,6 +1267,9 @@
           }
         }
       }
+    },
+    "Expand route panel" : {
+
     },
     "Expired" : {
       "localizations" : {
@@ -1297,13 +1338,13 @@
         }
       }
     },
+    "Find nearby transit stops" : {
+
+    },
     "Force-quitting, iOS suspension, or losing the VPN can interrupt updates. After an execution gap, movement pauses instead of jumping ahead. A fixed position may persist or revert; verify it on your phone. Arm saved departures while in the foreground. They can then run while locked when iOS permits execution; re-arm after restarting the app." : {
 
     },
     "Get LocalDevVPN" : {
-
-    },
-    "Ghost" : {
 
     },
     "Help" : {
@@ -1664,6 +1705,9 @@
       }
     },
     "iPhone setup" : {
+
+    },
+    "Journey" : {
 
     },
     "Journey details" : {
@@ -2050,13 +2094,16 @@
         }
       }
     },
-    "Map" : {
+    "Map style" : {
+
+    },
+    "Map style and transit" : {
 
     },
     "Mobile Ghost" : {
 
     },
-    "Mobile Ghost 0.4.1 · iPhone location simulation" : {
+    "Mobile Ghost 0.6.0 · iPhone location simulation" : {
 
     },
     "MobileGhost %@ • iOS %@" : {
@@ -2226,8 +2273,10 @@
         }
       }
     },
+    "Movement speed" : {
+
+    },
     "Name" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2684,6 +2733,9 @@
     "Privacy and credits" : {
 
     },
+    "Random start within a window" : {
+
+    },
     "Read from the provisioning profile on this device, so it follows a SideStore refresh." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2862,6 +2914,9 @@
     "Renew before expiry. For an Xcode installation, connect to your Mac and Run the same project using the same signing team. For a SideStore installation, refresh it in SideStore. Keep the existing app installed." : {
 
     },
+    "Repeat" : {
+
+    },
     "Repeat on" : {
 
     },
@@ -2885,7 +2940,7 @@
         }
       }
     },
-    "Report missing path" : {
+    "Report a missing path" : {
 
     },
     "Restart MobileGhost, then try again." : {
@@ -2959,7 +3014,6 @@
 
     },
     "Save" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3038,9 +3092,6 @@
     "Search" : {
 
     },
-    "Search a place or tap anywhere on the map." : {
-
-    },
     "Search bookmarks" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3076,6 +3127,9 @@
       }
     },
     "Search place or coordinates" : {
+
+    },
+    "Search places" : {
 
     },
     "Select New File" : {
@@ -3394,7 +3448,7 @@
         }
       }
     },
-    "Some map tiles failed to load." : {
+    "Some walking tiles could not load." : {
 
     },
     "Source code and license" : {
@@ -3705,6 +3759,9 @@
           }
         }
       }
+    },
+    "Tap the map to place a pin, or search for a place." : {
+
     },
     "Target Device IP" : {
       "extractionState" : "stale",
@@ -4123,13 +4180,26 @@
     "Walking paths" : {
 
     },
-    "Where to?" : {
+    "Window length: %lld min" : {
 
+    },
+    "Window starts" : {
+
+    },
+    "Window: %@–%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Window: %1$@–%2$@"
+          }
+        }
+      }
     },
     "Your day, planned" : {
 
     },
-    "YOUR LOCATION STUDIO" : {
+    "Your next journey" : {
 
     }
   },

@@ -75,17 +75,20 @@ struct RootView: View {
                     .allowsHitTesting(!isShowingExpiryWarning)
                 if isShowingExpiryWarning { expiryOverlay }
             }
-            .safeAreaInset(edge:.top,spacing:0) {
+            .overlay(alignment:.top) {
                 if !isReady && !isShowingExpiryWarning {
                     HStack {
                         Label("Connect to simulate · map available",systemImage:"bolt.horizontal.circle")
                             .font(.caption).foregroundStyle(.secondary)
                         Spacer()
                         Button("Setup") { isShowingSettings = true }.font(.caption.bold())
-                    }.padding(10).background(.regularMaterial)
+                    }.padding(10).background(GhostPalette.panel,in:Capsule())
+                    .overlay(Capsule().stroke(GhostPalette.border)).padding(.horizontal,16).padding(.top,6)
                 }
             }
         }
+        .preferredColorScheme(.dark)
+        .tint(GhostPalette.accent)
         .sheet(isPresented: $isShowingSettings) {
             SettingsView()
         }
