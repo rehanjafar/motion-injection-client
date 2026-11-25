@@ -276,6 +276,9 @@
     "About" : {
 
     },
+    "Active movement" : {
+
+    },
     "Active routes and fixed positions continue refreshing when you switch apps or lock the screen, while iOS permits background location execution. Allow location access and keep LocalDevVPN connected. A location indicator may appear and battery use increases." : {
 
     },
@@ -377,9 +380,6 @@
           }
         }
       }
-    },
-    "Apple" : {
-
     },
     "Apple Maps" : {
 
@@ -580,6 +580,9 @@
         }
       }
     },
+    "Choose map style" : {
+
+    },
     "Chosen start shown above" : {
 
     },
@@ -718,6 +721,9 @@
         }
       }
     },
+    "Close place panel" : {
+
+    },
     "Close search" : {
 
     },
@@ -787,9 +793,6 @@
           }
         }
       }
-    },
-    "Connect to simulate · map available" : {
-
     },
     "Connected to this device" : {
       "localizations" : {
@@ -2097,13 +2100,10 @@
     "Map style" : {
 
     },
-    "Map style and transit" : {
-
-    },
     "Mobile Ghost" : {
 
     },
-    "Mobile Ghost 0.6.0 · iPhone location simulation" : {
+    "Mobile Ghost 0.6.1 · iPhone location simulation" : {
 
     },
     "MobileGhost %@ • iOS %@" : {
@@ -2940,9 +2940,6 @@
         }
       }
     },
-    "Report a missing path" : {
-
-    },
     "Restart MobileGhost, then try again." : {
       "localizations" : {
         "en" : {
@@ -2960,6 +2957,9 @@
       }
     },
     "Restore" : {
+
+    },
+    "Restore location" : {
 
     },
     "Resume route" : {
@@ -3221,7 +3221,7 @@
         }
       }
     },
-    "Setup" : {
+    "Setup needed" : {
 
     },
     "SideStore users: open SideStore" : {
@@ -4178,6 +4178,9 @@
 
     },
     "Walking paths" : {
+
+    },
+    "Walking tiles unavailable" : {
 
     },
     "Window length: %lld min" : {

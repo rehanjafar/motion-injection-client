@@ -1,11 +1,31 @@
 import SwiftUI
 
-/// Interface colors shared by the map screen and its controls.
 enum GhostPalette {
-    static let background = Color(red:0.035,green:0.085,blue:0.070)
-    static let panel = Color(red:0.065,green:0.145,blue:0.120)
-    static let card = Color(red:0.095,green:0.205,blue:0.175)
-    static let accent = Color(red:0.48,green:0.84,blue:0.74)
-    static let secondary = Color(red:0.64,green:0.75,blue:0.70)
-    static let border = Color(red:0.23,green:0.36,blue:0.31)
+    static let background = Color(uiColor:.systemBackground)
+    static let accent = Color.primary
+    static let secondary = Color.secondary
+    static let border = Color.primary.opacity(0.12)
+}
+
+private struct GhostGlass: ViewModifier {
+    var cornerRadius: CGFloat
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @ViewBuilder func body(content: Content) -> some View {
+        let shape = RoundedRectangle(cornerRadius:cornerRadius,style:.continuous)
+        if reduceTransparency {
+            content.background(Color(uiColor:.secondarySystemBackground),in:shape)
+                .overlay(shape.strokeBorder(GhostPalette.border))
+        } else if #available(iOS 26.0, *) {
+            content.glassEffect(.regular,in:shape)
+        } else {
+            content.background(.regularMaterial,in:shape)
+                .overlay(shape.strokeBorder(.white.opacity(0.35)))
+                .shadow(color:.black.opacity(0.08),radius:12,y:4)
+        }
+    }
+}
+extension View {
+    func ghostGlass(cornerRadius: CGFloat) -> some View {
+        modifier(GhostGlass(cornerRadius:cornerRadius))
+    }
 }

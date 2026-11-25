@@ -77,13 +77,13 @@ struct RootView: View {
             }
             .overlay(alignment:.top) {
                 if !isReady && !isShowingExpiryWarning {
-                    HStack {
-                        Label("Connect to simulate · map available",systemImage:"bolt.horizontal.circle")
-                            .font(.caption).foregroundStyle(.secondary)
-                        Spacer()
-                        Button("Setup") { isShowingSettings = true }.font(.caption.bold())
-                    }.padding(10).background(GhostPalette.panel,in:Capsule())
-                    .overlay(Capsule().stroke(GhostPalette.border)).padding(.horizontal,16).padding(.top,6)
+                    Button { isShowingSettings = true } label: {
+                        Label("Setup needed",systemImage:"bolt.horizontal.circle")
+                            .font(.caption.weight(.medium)).padding(.horizontal,12).frame(height:44)
+                    }.ghostGlass(cornerRadius:22)
+                        .frame(maxWidth:.infinity,alignment:.leading)
+                        .padding(.horizontal,16).padding(.top,8)
+
                 }
             }
         }
