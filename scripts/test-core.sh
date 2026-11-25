@@ -7,3 +7,6 @@ swiftc -module-cache-path .build/module-cache MobileGhost/Core/Journey.swift Tes
 
 swiftc -module-cache-path .build/module-cache MobileGhost/Support/AppSigningInfo.swift MobileGhost/Support/UserDefaults+Keys.swift Tests/SigningChecks.swift -o .build/signing-checks
 .build/signing-checks
+
+swiftc -module-cache-path .build/module-cache MobileGhost/Core/PresentationMotion.swift Tests/PresentationChecks.swift -o .build/presentation-checks
+.build/presentation-checks

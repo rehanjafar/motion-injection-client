@@ -139,6 +139,7 @@ struct CampusMap: UIViewRepresentable {
         private var pins: [Pin] = []
         private var selected: GeoPoint?
         private var simulated: GeoPoint?
+        private var simulatedPin: Pin?
         private var stops: [JourneyStop] = []
         private var buses: [JourneyStop] = []
         private var routePoints: [[GeoPoint]] = []
@@ -170,17 +171,26 @@ struct CampusMap: UIViewRepresentable {
                 map.setRegion(region,animated:false)
                 applyingRegion = false
             }
-            if selected != parent.selected || simulated != parent.simulated || stops != parent.stops || buses != parent.busStops {
-                selected = parent.selected; simulated = parent.simulated; stops = parent.stops; buses = parent.busStops
+            if selected != parent.selected || stops != parent.stops || buses != parent.busStops {
+                selected = parent.selected; stops = parent.stops; buses = parent.busStops
                 map.removeAnnotations(pins); pins = []
                 func add(_ point: GeoPoint, _ title: String, _ kind: String, number: Int? = nil, bus: JourneyStop? = nil) {
                     let pin = Pin(); pin.coordinate = point.coordinate; pin.title = title; pin.kind = kind; pin.number = number; pin.busStop = bus; pins.append(pin)
                 }
                 if let selected { add(selected,"Selected location","selected") }
-                if let simulated { add(simulated,"Simulated location","simulated") }
                 for (index,stop) in stops.enumerated() { add(stop.point,"\(index+1). \(stop.name)","stop",number:index+1) }
                 for stop in buses { add(stop.point,stop.name,"bus",bus:stop) }
                 map.addAnnotations(pins)
+            }
+            if simulated != parent.simulated {
+                simulated = parent.simulated
+                if let point = simulated {
+                    if let simulatedPin { simulatedPin.coordinate = point.coordinate }
+                    else {
+                        let pin = Pin(); pin.kind = "simulated"; pin.title = "Simulated location"
+                        pin.coordinate = point.coordinate; simulatedPin = pin; map.addAnnotation(pin)
+                    }
+                } else if let simulatedPin { map.removeAnnotation(simulatedPin); self.simulatedPin = nil }
             }
             let points = parent.legs.map(\.points)
             if points != routePoints {
@@ -227,11 +237,13 @@ struct CampusMap: UIViewRepresentable {
             guard let pin = annotation as? Pin else { return nil }
             let view = (mapView.dequeueReusableAnnotationView(withIdentifier:"ghostPin") as? MKMarkerAnnotationView) ?? MKMarkerAnnotationView(annotation:pin,reuseIdentifier:"ghostPin")
             view.annotation = pin; view.canShowCallout = true
-            view.markerTintColor = pin.kind == "simulated" ? .systemBlue : .systemGray
+            view.markerTintColor = pin.kind == "simulated" ? .systemOrange : .systemGray
             view.glyphTintColor = .white
             view.glyphText = pin.number.map(String.init)
             view.glyphImage = pin.number == nil ? UIImage(systemName:pin.kind == "bus" ? "bus.fill" : pin.kind == "simulated" ? "location.fill" : "mappin") : nil
-            view.displayPriority = pin.number == nil ? .defaultHigh : .required
+            view.displayPriority = pin.kind == "simulated" || pin.number != nil ? .required : .defaultHigh
+            view.zPriority = pin.kind == "simulated" ? .max : .defaultUnselected
+            view.selectedZPriority = pin.kind == "simulated" ? .max : .defaultSelected
             return view
         }
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

@@ -381,9 +381,6 @@
         }
       }
     },
-    "Apple Maps" : {
-
-    },
     "Arm" : {
 
     },
@@ -524,9 +521,6 @@
     "Build a route, choose a departure time, then add it here. You can save several departures." : {
 
     },
-    "Bus (custom roads)" : {
-
-    },
     "Cancel" : {
       "localizations" : {
         "en" : {
@@ -559,9 +553,6 @@
           }
         }
       }
-    },
-    "Car" : {
-
     },
     "Checking the Developer Disk Image" : {
       "extractionState" : "stale",
@@ -688,6 +679,9 @@
         }
       }
     },
+    "Close %@" : {
+
+    },
     "Close and reopen MobileGhost to switch language." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -721,13 +715,10 @@
         }
       }
     },
-    "Close place panel" : {
-
-    },
     "Close search" : {
 
     },
-    "Collapse route panel" : {
+    "Collapse panel" : {
 
     },
     "Confirm iOS shows the VPN indicator." : {
@@ -1271,7 +1262,7 @@
         }
       }
     },
-    "Expand route panel" : {
+    "Expand panel" : {
 
     },
     "Expired" : {
@@ -2097,13 +2088,10 @@
         }
       }
     },
-    "Map style" : {
-
-    },
     "Mobile Ghost" : {
 
     },
-    "Mobile Ghost 0.6.1 · iPhone location simulation" : {
+    "Mobile Ghost 0.7.0 · iPhone location simulation" : {
 
     },
     "MobileGhost %@ • iOS %@" : {
@@ -2466,9 +2454,6 @@
         }
       }
     },
-    "On the move" : {
-
-    },
     "Open iPhone Settings" : {
 
     },
@@ -2590,9 +2575,6 @@
         }
       }
     },
-    "OpenStreetMap" : {
-
-    },
     "OpenStreetMap contributors · ODbL" : {
 
     },
@@ -2693,9 +2675,6 @@
       }
     },
     "Places and the last session point are stored on this iPhone. Apple Maps receives search and Apple route requests. The Walking map loads OpenStreetMap tiles; walking routes send stop coordinates to routing.openstreetmap.de. Bus-stop searches send the map centre to OpenStreetMap’s Overpass service. Developer images download from the upstream GitHub source. No analytics or app account." : {
-
-    },
-    "Plan a journey" : {
 
     },
     "Plan route" : {
@@ -3010,9 +2989,6 @@
     "Runs at the selected time on each chosen day, starting on or after the date below. Uses %@, including daylight-saving changes." : {
 
     },
-    "Satellite" : {
-
-    },
     "Save" : {
       "localizations" : {
         "en" : {
@@ -3086,12 +3062,6 @@
         }
       }
     },
-    "Schedules" : {
-
-    },
-    "Search" : {
-
-    },
     "Search bookmarks" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3147,9 +3117,6 @@
           }
         }
       }
-    },
-    "Selected location" : {
-
     },
     "Set location" : {
 
@@ -3220,6 +3187,9 @@
           }
         }
       }
+    },
+    "Settings, saved places and map style" : {
+
     },
     "Setup needed" : {
 
@@ -4174,9 +4144,6 @@
         }
       }
     },
-    "Walking" : {
-
-    },
     "Walking paths" : {
 
     },
@@ -4200,9 +4167,6 @@
       }
     },
     "Your day, planned" : {
-
-    },
-    "Your next journey" : {
 
     }
   },

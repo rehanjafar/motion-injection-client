@@ -2,6 +2,8 @@
 import SwiftUI
 import MapKit
 
+private enum HomePanel: Equatable { case place, route, schedules }
+
 struct GhostHomeView: View {
     @StateObject private var session = GhostSession()
     @StateObject private var openingLocation = CurrentLocationProvider()
@@ -22,16 +24,33 @@ struct GhostHomeView: View {
     @State private var mode = "Walking"
     @State private var plan: JourneyPlan?
     @State private var working = false
-    @State private var searchVisible = false
+    @State private var searchPresentation = SearchPresentation()
+    private var searchVisible: Bool {
+        get { searchPresentation.isOpen }
+        nonmutating set { if newValue { searchPresentation.open() } else { searchPresentation.close() } }
+    }
+    private var searchRaised: Bool { searchPresentation.stage == .raised }
     @State private var activeDock = "Route"
     @State private var panelExpanded = false
-    @State private var panelVisible = false
+    @State private var presentedPanel: HomePanel?
+    @State private var routeEditMode: EditMode = .inactive
+    @Namespace private var dockNamespace
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var searchFocused: Bool
     @State private var showSettings = false
     @State private var showLibrary = false
-    @State private var showRoute = false
-    @State private var showSchedules = false
+    private var showRoute: Bool {
+        get { presentedPanel == .route }
+        nonmutating set { if newValue { presentedPanel = .route; searchVisible = false } else if presentedPanel == .route { presentedPanel = nil } }
+    }
+    private var showSchedules: Bool {
+        get { presentedPanel == .schedules }
+        nonmutating set { if newValue { presentedPanel = .schedules; searchVisible = false } else if presentedPanel == .schedules { presentedPanel = nil } }
+    }
+    private var panelVisible: Bool {
+        get { presentedPanel != nil }
+        nonmutating set { presentedPanel = newValue ? .place : nil }
+    }
     @State private var editingSchedule: ScheduledJourney?
     @State private var randomDeparture = false
     @State private var windowMinutes = 5
@@ -53,9 +72,6 @@ struct GhostHomeView: View {
             ZStack {
                 journeyMap.ignoresSafeArea()
                 VStack(spacing:12) {
-                    if searchVisible {
-                        searchBar.padding(12).ghostGlass(cornerRadius:22).padding(.horizontal,16)
-                    }
                     Spacer(minLength:8)
                     if let locationHint, !panelVisible && !searchVisible {
                         Text(locationHint).font(.caption).padding(10).ghostGlass(cornerRadius:16)
@@ -70,13 +86,17 @@ struct GhostHomeView: View {
                     if panelVisible {
                         HStack { mapStyleMenu.ghostGlass(cornerRadius:20); Spacer() }.padding(.horizontal,16)
                     }
-                    if panelVisible {
-                        controlPanel
-                            .frame(height:min(geometry.size.height * 0.55,panelExpanded ? 380 : 260))
+                    if let panel = presentedPanel {
+                        panelContent(panel)
+                            .frame(height:panelHeight(panel,in:geometry.size.height))
                             .padding(.horizontal,12)
                             .transition(.move(edge:.bottom).combined(with:.opacity))
                     }
+                    if searchVisible && !results.isEmpty {
+                        searchResults.padding(12).ghostGlass(cornerRadius:24).padding(.horizontal,16)
+                    }
                     bottomDock.padding(.horizontal,16)
+                        .padding(.bottom,searchRaised ? 12 : 0)
                     if mapStyle == "Walking" {
                         Link("© OpenStreetMap contributors",destination:URL(string:"https://www.openstreetmap.org/copyright")!)
                             .font(.system(size:10)).padding(.horizontal,8).padding(.vertical,3)
@@ -88,13 +108,25 @@ struct GhostHomeView: View {
         .toolbar(.hidden,for:.navigationBar)
         .preferredColorScheme(.dark)
         .tint(GhostPalette.accent)
-        .animation(reduceMotion ? nil : .easeInOut(duration:0.22),value:panelVisible)
+        .animation(reduceMotion ? nil : .spring(response:0.44,dampingFraction:0.9),value:presentedPanel)
+        .animation(reduceMotion ? nil : .spring(response:0.48,dampingFraction:0.9),value:searchVisible)
+        .animation(reduceMotion ? nil : .easeInOut(duration:0.28),value:searchRaised)
         .animation(reduceMotion ? nil : .easeInOut(duration:0.22),value:panelExpanded)
         .sheet(isPresented:$showSettings) { SettingsView() }
-        .sheet(isPresented:$showSchedules) { scheduleList }
-        .sheet(isPresented:$showRoute) { routeEditor }
         .sheet(isPresented:$showLibrary) { library }
         .alert("Mobile Ghost",isPresented:Binding(get:{session.error != nil},set:{if !$0 { session.error = nil }})) { Button("OK") {session.error = nil} } message: { Text(session.error ?? "") }
+        .sheet(item:$editingSchedule) { item in ScheduleEditor(session:session,item:item) }
+        .task(id:searchPresentation.requestID) {
+            let request = searchPresentation.requestID
+            guard searchVisible else { searchFocused = false; return }
+            do {
+                try await Task.sleep(for:.seconds(PresentationMotion.searchExpansionDelay))
+                guard !Task.isCancelled, searchPresentation.raise(request:request) else { return }
+                try await Task.sleep(for:.seconds(reduceMotion ? 0 : PresentationMotion.keyboardFocusDelay))
+                guard !Task.isCancelled, searchPresentation.mayFocus(request:request) else { return }
+                searchFocused = true
+            } catch { return }
+        }
         .onAppear {
             if let data = UserDefaults.standard.data(forKey:"ghostPlaces") { saved = (try? JSONDecoder().decode([JourneyStop].self,from:data)) ?? [] }
             if !didOpen { didOpen = true; needsOpeningCenter = false; centerOnOpeningLocation() }
@@ -102,7 +134,7 @@ struct GhostHomeView: View {
         .onChange(of:phase) { _, value in
             session.setForeground(value == .active)
             if value == .active && needsOpeningCenter { needsOpeningCenter = false; centerOnOpeningLocation() }
-            else if value == .background { needsOpeningCenter = true; awaitingOpeningLocation = false; openingLocation.cancel(); panelVisible = false }
+            else if value == .background { needsOpeningCenter = true; awaitingOpeningLocation = false; openingLocation.cancel(); panelVisible = false; searchVisible = false; searchFocused = false }
         }
 
     }
@@ -142,36 +174,36 @@ struct GhostHomeView: View {
         }
     }
     private var searchBar: some View {
-        VStack(spacing:6) {
-            if let locationHint { Text(locationHint).font(.caption).foregroundStyle(.secondary).frame(maxWidth:.infinity,alignment:.leading) }
-            HStack {
-                Image(systemName:"magnifyingglass")
-                TextField("Search place or coordinates",text:$query).focused($searchFocused).submitLabel(.search)
-                    .onSubmit { Task { await search() } }
-                Button { Task { await search() } } label: { Image(systemName:"arrow.right.circle.fill") }
-                    .disabled(working || query.isEmpty).accessibilityLabel("Search")
-            }.padding(12).background(.quaternary,in:RoundedRectangle(cornerRadius:14))
-            if !results.isEmpty {
-                ScrollView {
-                    VStack(alignment:.leading,spacing:0) {
-                        ForEach(Array(results.prefix(4).enumerated()),id:\.offset) { _, item in
-                            Button { select(GeoPoint(item.placemark.coordinate)); query = item.name ?? "Place"; results = [] } label: {
-                                Text(item.name ?? "Place").frame(maxWidth:.infinity,alignment:.leading).padding(10)
-                            }
-                        }
-                    }
-                }.frame(maxHeight:140)
+        HStack(spacing:12) {
+            Image(systemName:"magnifyingglass").font(.system(size:20))
+            TextField("Search place or coordinates",text:$query)
+                .focused($searchFocused).submitLabel(.search).autocorrectionDisabled()
+                .onSubmit { Task { await search() } }
+            if working { ProgressView().controlSize(.small) }
+            Button { searchVisible = false; searchFocused = false } label: {
+                Image(systemName:"xmark").frame(width:44,height:44)
+            }.accessibilityLabel("Close search")
+        }.padding(.leading,18).padding(.trailing,6).frame(height:58)
+    }
+    private var searchResults: some View {
+        ScrollView {
+            VStack(alignment:.leading,spacing:6) {
+                ForEach(Array(results.prefix(4).enumerated()),id:\.offset) { _, item in
+                    Button { select(GeoPoint(item.placemark.coordinate)); query = item.name ?? "Place"; results = [] } label: {
+                        Label(item.name ?? "Place",systemImage:"mappin")
+                            .frame(maxWidth:.infinity,alignment:.leading).padding(12)
+                    }.buttonStyle(.plain)
+                }
             }
+        }.frame(maxHeight:180)
+    }
+    private var mapStyleItems: [GhostMenuItem] {
+        [("Walking","Walking","figure.walk"),("Apple","Apple Maps","map"),("Satellite","Satellite","globe")].map { value in
+            GhostMenuItem(id:value.0,title:value.1,symbol:value.2,selected:mapStyle == value.0) { mapStyle = value.0 }
         }
     }
     private var mapStyleMenu: some View {
-        Menu {
-            Picker("Map style",selection:$mapStyle) {
-                Text("Walking").tag("Walking")
-                Text("Apple Maps").tag("Apple")
-                Text("Satellite").tag("Satellite")
-            }
-        } label: {
+        GhostDropdown(items:mapStyleItems) {
             HStack(spacing:8) {
                 Image(systemName:"map")
                 Text(mapStyle == "Apple" ? "Apple Maps" : mapStyle)
@@ -179,37 +211,29 @@ struct GhostHomeView: View {
             }.font(.subheadline.weight(.medium)).padding(.horizontal,16).frame(height:46)
         }.accessibilityLabel("Choose map style")
     }
-    private var controlPanel: some View {
-        VStack(spacing:0) {
-            VStack(spacing:14) {
-                Capsule().fill(GhostPalette.accent.opacity(0.45)).frame(width:42,height:4)
-                    .frame(maxWidth:.infinity,minHeight:28)
-                Rectangle().fill(GhostPalette.border).frame(height:1)
+    @ViewBuilder private func panelContent(_ panel: HomePanel) -> some View {
+        switch panel {
+        case .place: controlPanel
+        case .route:
+            GhostPanelSurface(title:"Plan a journey",expanded:$panelExpanded,editable:true,close:{ showRoute = false }) {
+                routeEditor
+            }.environment(\.editMode,$routeEditMode)
+        case .schedules:
+            GhostPanelSurface(title:"Schedules",expanded:$panelExpanded,close:{ showSchedules = false }) {
+                scheduleList
             }
-            .padding(.horizontal,18)
-            .contentShape(Rectangle())
-            .onTapGesture { panelExpanded.toggle() }
-            .gesture(DragGesture(minimumDistance:15).onEnded { value in
-                if value.translation.height < -15 { panelExpanded = true }
-                else if value.translation.height > 15 { if panelExpanded { panelExpanded = false } else { panelVisible = false } }
-            })
-            .accessibilityElement(children:.ignore)
-            .accessibilityLabel(panelExpanded ? "Collapse route panel" : "Expand route panel")
-            .accessibilityAddTraits(.isButton)
-            .accessibilityAction { panelExpanded.toggle() }
+        }
+    }
+    private func panelHeight(_ panel: HomePanel, in height: CGFloat) -> CGFloat {
+        let available = max(140,height - 178)
+        if panel == .place { return min(available,panelExpanded ? 470 : 330) }
+        return min(available,height * (panelExpanded ? 0.80 : 0.69))
+    }
+    private var controlPanel: some View {
+        GhostPanelSurface(title:session.running ? "On the move" : "Selected location",subtitle:session.status,
+            expanded:$panelExpanded,close:{ panelVisible = false }) {
             ScrollView {
                 VStack(alignment:.leading,spacing:18) {
-                    HStack(alignment:.top) {
-                        VStack(alignment:.leading,spacing:5) {
-                            Text(session.running ? "On the move" : selected != nil ? "Selected location" : "Your next journey")
-                                .font(.system(size:22,weight:.semibold))
-                            Text(session.status).font(.caption).foregroundStyle(GhostPalette.secondary)
-                        }
-                        Spacer(minLength:8)
-                        Button { panelVisible = false } label: {
-                            Image(systemName:"xmark").frame(width:44,height:44)
-                        }.accessibilityLabel("Close place panel")
-                    }
                     if let locationHint { Text(locationHint).font(.caption).foregroundStyle(GhostPalette.secondary) }
                     if tileFailed && mapStyle == "Walking" {
                         HStack {
@@ -266,45 +290,41 @@ struct GhostHomeView: View {
                 }.padding(20)
             }
         }
-        .ghostGlass(cornerRadius:28)
     }
 
     private var bottomDock: some View {
-        HStack(spacing:10) {
-            Menu {
-                Button { showSettings = true } label: { Label("Connection settings",systemImage:"gearshape") }
-                Button { showLibrary = true } label: { Label("Saved places",systemImage:"bookmark") }
-                Picker("Map style",selection:$mapStyle) {
-                    Text("Walking").tag("Walking")
-                    Text("Apple Maps").tag("Apple")
-                    Text("Satellite").tag("Satellite")
+        GhostGlassGroup {
+            ZStack {
+                if searchVisible {
+                    searchBar.ghostGlass(cornerRadius:20,interactive:true)
+                        .ghostMorph("dock-search",in:dockNamespace)
+                        .transition(.opacity)
+                } else {
+                    HStack(spacing:10) {
+                        GhostDropdown(items:settingsItems) {
+                            Image(systemName:"gearshape").font(.system(size:20)).frame(width:48,height:48)
+                        }.ghostGlass(cornerRadius:17,interactive:true)
+                            .accessibilityLabel("Settings, saved places and map style")
+                        GhostDockTabs(selection:$activeDock,openRoute:{ showRoute = true },openSchedules:{ showSchedules = true })
+                        Button {
+                            panelVisible = false; searchFocused = false; searchVisible = true
+                        } label: {
+                            Image(systemName:"magnifyingglass").font(.system(size:20)).frame(width:48,height:48)
+                        }.ghostGlass(cornerRadius:17,interactive:true)
+                            .ghostMorph("dock-search",in:dockNamespace)
+                            .accessibilityLabel("Search places")
+                    }.transition(.opacity)
                 }
-            } label: {
-                Image(systemName:"gearshape").font(.system(size:20)).frame(width:48,height:48)
-            }.ghostGlass(cornerRadius:17).accessibilityLabel("Settings, saved places and map style")
-            HStack(spacing:2) {
-                dockTab("Route") { showRoute = true }
-                dockTab("Scheduled") { showSchedules = true }
-            }.padding(5).ghostGlass(cornerRadius:20)
-            Button {
-                searchVisible.toggle(); searchFocused = searchVisible
-            } label: {
-                Image(systemName:searchVisible ? "xmark" : "magnifyingglass")
-                    .font(.system(size:20)).frame(width:48,height:48)
-            }.ghostGlass(cornerRadius:17).accessibilityLabel(searchVisible ? "Close search" : "Search places")
+            }.frame(height:60)
         }
     }
-    private func dockTab(_ title: String, action: @escaping () -> Void) -> some View {
-        Button { activeDock = title; action() } label: {
-            Text(title).font(.system(size:14,weight:.semibold))
-                .frame(maxWidth:.infinity,minHeight:42)
-                .background(activeDock == title ? Color.white.opacity(0.15) : .clear,in:RoundedRectangle(cornerRadius:15))
-                .overlay(RoundedRectangle(cornerRadius:15).strokeBorder(activeDock == title ? Color.white.opacity(0.22) : .clear))
-        }.buttonStyle(.plain)
-            .accessibilityAddTraits(activeDock == title ? [.isSelected] : [])
+    private var settingsItems: [GhostMenuItem] {
+        mapStyleItems + [
+            GhostMenuItem(id:"saved",title:"Saved places",symbol:"bookmark") { showLibrary = true },
+            GhostMenuItem(id:"settings",title:"Connection settings",symbol:"gearshape") { showSettings = true }
+        ]
     }
     private var scheduleList: some View {
-        NavigationStack {
             List {
                 Section {
                     HStack {
@@ -352,13 +372,10 @@ struct GhostHomeView: View {
                         }.padding(.vertical,6)
                     }
                 }
-            }.navigationTitle("Schedules")
-            .sheet(item:$editingSchedule) { item in ScheduleEditor(session:session,item:item) }
-            .toolbar { ToolbarItem(placement:.topBarTrailing) { Button("Done") { showSchedules = false } } }
-        }
+            }.scrollContentBackground(.hidden)
+                .listStyle(.insetGrouped)
     }
     private var routeEditor: some View {
-        NavigationStack {
             Form {
                 if session.needsRestore {
                     Section("Active movement") {
@@ -372,14 +389,20 @@ struct GhostHomeView: View {
                     TextField("Name this journey",text:$routeName)
                 }
                 Section("Route") {
-                    Picker("Travel mode",selection:$mode) { Text("Walking").tag("Walking"); Text("Car").tag("Car"); Text("Bus (custom roads)").tag("Bus") }
-                        .onChange(of:mode) { _, m in plan = nil; speed = m == "Walking" ? 5 : (m == "Car" ? 40 : 30) }
+                    GhostDropdown(items:[("Walking","figure.walk"),("Car","car"),("Bus","bus")].map { value in
+                        GhostMenuItem(id:value.0,title:value.0,symbol:value.1,selected:mode == value.0) {
+                            mode = value.0; plan = nil; speed = mode == "Walking" ? 5 : mode == "Car" ? 40 : 30
+                        }
+                    }) { HStack { Text("Travel mode"); Spacer(); Text(mode); Image(systemName:"chevron.down") } }
                     if mode == "Bus" {
                         Button("Find nearby transit stops") { showRoute = false; Task { await findBusStops() } }
                     }
                     if mode == "Walking" {
-                        Picker("Walking paths",selection:$walkingProvider) { Text("OpenStreetMap").tag("OpenStreetMap"); Text("Apple Maps").tag("Apple Maps") }
-                            .onChange(of:walkingProvider) { _, _ in plan = nil }
+                        GhostDropdown(items:["OpenStreetMap","Apple Maps"].map { provider in
+                            GhostMenuItem(id:provider,title:provider,symbol:"map",selected:walkingProvider == provider) {
+                                walkingProvider = provider; plan = nil
+                            }
+                        }) { HStack { Text("Walking paths"); Spacer(); Text(walkingProvider); Image(systemName:"chevron.down") } }
                         Text("OpenStreetMap often includes smaller footpaths. Add intermediate pins to guide your route. Coverage varies; no provider includes every path.").font(.caption).foregroundStyle(.secondary)
                         Link("© OpenStreetMap contributors · Fix the map",destination:URL(string:"https://www.openstreetmap.org/copyright")!)
                     }
@@ -425,9 +448,7 @@ struct GhostHomeView: View {
                 if let error = session.error { Section("Needs attention") { Text(error).foregroundStyle(.red) } }
                 if !timingsValid { Text("Waits must be 0–86,400 seconds. Departure speed must be 0 (inherit) or 1–160 km/h.").foregroundStyle(.red) }
             }
-            .navigationTitle("Plan a journey")
-            .toolbar { ToolbarItem(placement:.topBarLeading) { EditButton() }; ToolbarItem(placement:.topBarTrailing) { Button("Done") { showRoute = false } } }
-        }
+            .scrollContentBackground(.hidden)
     }
     private var timingsValid: Bool { stops.allSatisfy { (0...86400).contains($0.waitSeconds) && ($0.departureSpeed == 0 || (1...160).contains($0.departureSpeed)) } }
     private var library: some View {
@@ -435,7 +456,7 @@ struct GhostHomeView: View {
             List {
                 Section("Saved places") { ForEach(saved) { place in Button(place.name) { select(place.point); query = place.name; showLibrary = false } }.onDelete { saved.remove(atOffsets:$0); persistPlaces() } }
                 Section("About") {
-                    Text("Mobile Ghost 0.6.2 · iPhone location simulation")
+                    Text("Mobile Ghost 0.7.0 · iPhone location simulation")
                     Text("Independent derivative of TLocation and StikDebug. © Stephen Bove and contributors. Modified October 22, 2026. AGPL-3.0; no warranty.").font(.caption)
                     Link("Source code and license",destination:URL(string:"https://github.com/rehanjafar/mobile-ghost")!)
                 }
